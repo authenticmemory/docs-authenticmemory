@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Software technical stack · Authentic Memory Docs</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>(function(){var d=document.documentElement,t=null;try{t=localStorage.getItem('theme');if(localStorage.getItem('nav-collapsed')==='1')d.classList.add('nav-collapsed')}catch(e){}if(t!=='dark'&&t!=='light')t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';d.setAttribute('data-theme',t)})()</script>
+</head>
+<body data-root="../">
+<header class="topbar">
+  <button type="button" id="sidebar-toggle" class="icon-btn" aria-label="Toggle navigation" aria-controls="sidebar">
+    <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+  </button>
+  <a class="brand" href="https://authenticmemory.org">
+    <img class="logo-light" src="../assets/AuthenticMemory_Logo.svg" alt="Authentic Memory">
+    <img class="logo-dark" src="../assets/AuthenticMemory_Logo_white.svg" alt="Authentic Memory">
+  </a>
+  <div class="search" role="search">
+    <input id="search-input" type="search" placeholder="Search…" autocomplete="off" spellcheck="false" aria-label="Search the manual">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="theme-toggle" class="icon-btn" aria-label="Switch between light and dark mode" title="Light / dark mode">
+    <svg class="icon-moon" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M16.5 12.2A7 7 0 0 1 7.8 3.5a7 7 0 1 0 8.7 8.7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    <svg class="icon-sun" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="10" cy="10" r="3.4"/><path d="M10 2.5v1.8M10 15.7v1.8M2.5 10h1.8M15.7 10h1.8M4.7 4.7l1.3 1.3M14 14l1.3 1.3M4.7 15.3 6 14M14 6l1.3-1.3"/></g></svg>
+  </button>
+</header>
+<div id="backdrop" class="backdrop"></div>
+<nav id="sidebar" class="sidebar" aria-label="Table of contents">
+<a class="nav-home" href="../index.html">Introduction</a>
+<ul class="nav-list"><li><div class="nav-row"><a href="../mission/index.html">Mission</a></div></li><li data-nav-id="requirements"><div class="nav-row"><button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Toggle Quality requirements"></button><a href="../requirements/index.html">Quality requirements</a></div><ul hidden><li><div class="nav-row"><a href="../requirements/standards/index.html">Standards</a></div></li><li><div class="nav-row"><a href="../requirements/user/index.html">User requirements</a></div></li><li><div class="nav-row"><a href="../requirements/functional/index.html">Functional requirements</a></div></li><li><div class="nav-row"><a href="../requirements/data/index.html">Data requirements</a></div></li><li data-nav-id="requirements/quality"><div class="nav-row"><button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Toggle Quality requirements"></button><a href="../requirements/quality/index.html">Quality requirements</a></div><ul hidden><li><div class="nav-row"><a href="../requirements/quality/security.html">Security</a></div></li><li><div class="nav-row"><a href="../requirements/quality/performance.html">Performance</a></div></li><li><div class="nav-row"><a href="../requirements/quality/scalability.html">Scalability</a></div></li></ul></li></ul></li><li data-nav-id="decisions"><div class="nav-row"><button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Toggle Decisions"></button><a href="index.html">Decisions</a></div><ul hidden><li data-nav-id="decisions/anchoring"><div class="nav-row"><button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Toggle Anchoring"></button><a href="anchoring/index.html">Anchoring</a></div><ul hidden><li><div class="nav-row"><a href="anchoring/ADR-010-bitcoin-blockchain-time-anchor.html">ADR 010: Bitcoin blockchain time anchor</a></div></li><li><div class="nav-row"><a href="anchoring/ADR-015-rfc-3161-time-anchor.html">ADR 015: RFC 3161 second time anchor</a></div></li><li><div class="nav-row"><a href="anchoring/ADR-020-opentimestamps-anchor.html">ADR 020: Opentimestamps anchoring.md</a></div></li><li><div class="nav-row"><a href="anchoring/ADR-030-sha256-file-fingerprint.html">Architecture Decision Record - Authentic Memory</a></div></li></ul></li><li><div class="nav-row"><a href="cryptography.html" aria-current="page">Software technical stack</a></div></li></ul></li><li data-nav-id="architecture"><div class="nav-row"><button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Toggle Architecture"></button><a href="../architecture/index.html">Architecture</a></div><ul hidden><li><div class="nav-row"><a href="../architecture/view1.html">View1</a></div></li><li><div class="nav-row"><a href="../architecture/view2.html">View2</a></div></li></ul></li><li data-nav-id="software"><div class="nav-row"><button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Toggle Software"></button><a href="../software/index.html">Software</a></div><ul hidden><li><div class="nav-row"><a href="../software/gami-app/index.html">Gami App</a></div></li><li><div class="nav-row"><a href="../software/gami-hash/index.html">Gami Hash</a></div></li></ul></li></ul>
+</nav>
+<script>try{JSON.parse(sessionStorage.getItem('nav-open')||'[]').forEach(function(id){var li=document.querySelector('#sidebar li[data-nav-id="'+id+'"]');if(li){li.querySelector('.nav-toggle').setAttribute('aria-expanded','true');li.querySelector('ul').hidden=false}})}catch(e){}</script>
+<main class="content">
+<article>
+<h1 id="software-technical-stack" tabindex="-1">Software technical stack</h1>
+
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="anchoring/ADR-030-sha256-file-fingerprint.html"><span>Previous</span>Architecture Decision Record - Authentic Memory</a><a class="next" href="../architecture/index.html"><span>Next</span>Architecture</a></nav>
+</main>
+<script defer src="../assets/lunr.min.js"></script>
+<script defer src="../assets/search-index.js"></script>
+<script defer src="../assets/app.js"></script>
+</body>
+</html>

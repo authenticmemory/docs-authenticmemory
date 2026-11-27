@@ -4,7 +4,6 @@ Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate veh
 ## In this section
 
 <!-- toc:start -->
-- [Software](01-api.md)
-- [CLI](02-cli.md)
-- [Glossary](03-glossary.md)
+- [View1](01-view1.md)
+- [View2](02-view2.md)
 <!-- toc:end -->
