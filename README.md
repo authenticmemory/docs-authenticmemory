@@ -1,3 +1,4 @@
+# Authentic Memory docs
 See [docs.authenticmemory.org](https://docs.authenticmemory.org)
 
 ## How it works
