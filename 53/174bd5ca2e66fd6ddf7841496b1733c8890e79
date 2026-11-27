@@ -1,0 +1,56 @@
+content/03-architecture/03-data-model.md
+  h_10c93bba641ef0 1
+content/03-architecture/index.md
+  h_10c93bba641ef0 1-9
+content/index.md
+  h_10c93bba641ef0 22-28
+docs/architecture/component-model.html
+  h_10c93bba641ef0 1-35
+docs/architecture/data-model.html
+  h_10c93bba641ef0 1-36
+docs/architecture/index.html
+  h_10c93bba641ef0 1-43
+docs/assets/search-index.js
+  h_10c93bba641ef0 1
+docs/getting-started/configuration.html
+  h_10c93bba641ef0 23
+docs/getting-started/first-steps.html
+  h_10c93bba641ef0 23
+docs/getting-started/index.html
+  h_10c93bba641ef0 23
+docs/getting-started/installation.html
+  h_10c93bba641ef0 23
+docs/guides/authentication.html
+  h_10c93bba641ef0 23
+docs/guides/data-model.html
+  h_10c93bba641ef0 23
+docs/guides/deployment/index.html
+  h_10c93bba641ef0 23
+docs/guides/deployment/production.html
+  h_10c93bba641ef0 23,44
+docs/guides/deployment/staging.html
+  h_10c93bba641ef0 23
+docs/guides/index.html
+  h_10c93bba641ef0 23
+docs/index.html
+  h_10c93bba641ef0 23,55-60
+docs/reference/api.html
+  h_10c93bba641ef0 23
+docs/reference/cli.html
+  h_10c93bba641ef0 23
+docs/reference/glossary.html
+  h_10c93bba641ef0 23
+docs/reference/index.html
+  h_10c93bba641ef0 23,37
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "53174bd5ca2e66fd6ddf7841496b1733c8890e79",
+  "prompts": {},
+  "humans": {
+    "h_10c93bba641ef0": {
+      "author": "Peter Van Garderen <vangarderen.peter@gmail.com>"
+    }
+  }
+}
