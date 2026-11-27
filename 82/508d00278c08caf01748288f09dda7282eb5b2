@@ -1,0 +1,93 @@
+README.md
+  s_a644500730bd65::t_f82e73b7ff35f4 1-29
+docs/01-getting-started/01-installation.html
+  s_a644500730bd65::t_eef08d9e391312 1-55
+docs/01-getting-started/01-installation.md
+  s_a644500730bd65::t_ec6b146c3df55a 1-29
+docs/01-getting-started/02-configuration.html
+  s_a644500730bd65::t_0e8f3faeca00fb 1-77
+docs/01-getting-started/02-configuration.md
+  s_a644500730bd65::t_a8b53028bf790a 1-26
+docs/01-getting-started/03-first-steps.html
+  s_a644500730bd65::t_06a35879189bca 1-51
+docs/01-getting-started/03-first-steps.md
+  s_a644500730bd65::t_99650459a5513f 1-22
+docs/01-getting-started/index.html
+  s_a644500730bd65::t_e3d17475b2b585 1-45
+docs/01-getting-started/index.md
+  s_a644500730bd65::t_43771241509001 1-11
+docs/02-guides/01-authentication.html
+  s_a644500730bd65::t_e342d104c29870 1-51
+docs/02-guides/01-authentication.md
+  s_a644500730bd65::t_72ed8be512b4b8 1-22
+docs/02-guides/02-data-model.html
+  s_a644500730bd65::t_2a098837f8c4ff 1-75
+docs/02-guides/02-data-model.md
+  s_a644500730bd65::t_7329ec0ac5fe29 1-27
+docs/02-guides/03-deployment/01-staging.html
+  s_a644500730bd65::t_aac8bc61edaad2 1-44
+docs/02-guides/03-deployment/01-staging.md
+  s_a644500730bd65::t_96cd704b99d639 1-15
+docs/02-guides/03-deployment/02-production.html
+  s_a644500730bd65::t_8179d7391b7d8f 1-51
+docs/02-guides/03-deployment/02-production.md
+  s_a644500730bd65::t_2b073eef836dc4 1-19
+docs/02-guides/03-deployment/index.html
+  s_a644500730bd65::t_5930c58d61e70c 1-44
+docs/02-guides/03-deployment/index.md
+  s_a644500730bd65::t_dd6e9998abbc13 1-10
+docs/02-guides/index.html
+  s_a644500730bd65::t_4a2670cd42c01f 1-45
+docs/02-guides/index.md
+  s_a644500730bd65::t_a702caa7e69255 1-11
+docs/03-reference/01-api.html
+  s_a644500730bd65::t_ee887db07dfb08 1-74
+docs/03-reference/01-api.md
+  s_a644500730bd65::t_f74b39656cab19 1-20
+docs/03-reference/02-cli.html
+  s_a644500730bd65::t_b574e7825c5223 1-68
+docs/03-reference/02-cli.md
+  s_a644500730bd65::t_d520b4aab1fafc 1-25
+docs/03-reference/03-glossary.html
+  s_a644500730bd65::t_03948fc22aee38 1-63
+docs/03-reference/03-glossary.md
+  s_a644500730bd65::t_7bfb4a8efa13e8 1-8
+docs/03-reference/index.html
+  s_a644500730bd65::t_780c0c21f20def 1-44
+docs/03-reference/index.md
+  s_a644500730bd65::t_cb970527e9cfac 1-9
+docs/assets/app.js
+  s_a644500730bd65::t_f6074871b7fd87 1-142
+docs/assets/lunr.min.js
+  s_a644500730bd65::t_cb476bd329a4e2 1-6
+docs/assets/search-index.js
+  s_a644500730bd65::t_5aeff84e70a966 1
+docs/assets/style.css
+  s_a644500730bd65::t_071d9b105d71f8 1-310
+docs/index.html
+  s_a644500730bd65::t_6035076df8c3e4 1-73
+docs/index.md
+  s_a644500730bd65::t_b94d37122c864e 1-26
+manual.config.json
+  s_a644500730bd65::t_43747058e1e1ad 3
+tools/build.mjs
+  s_a644500730bd65::t_58c60a817708ef 2,21-22,36-37,68,183,226-236,256,271,274
+tools/hooks/pre-commit
+  s_a644500730bd65::t_76b0b62a1a30f2 3,13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "82508d00278c08caf01748288f09dda7282eb5b2",
+  "prompts": {},
+  "sessions": {
+    "s_a644500730bd65": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b31df9a9-70be-4120-b96a-e8948fcfc928",
+        "model": "unknown"
+      },
+      "human_author": "Peter Van Garderen <vangarderen.peter@gmail.com>"
+    }
+  }
+}
