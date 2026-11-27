@@ -13,17 +13,18 @@
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #15181d;
-    --bg-soft: #1c2026;
-    --text: #dfe4ea;
-    --muted: #96a1b0;
-    --border: #2c323b;
-    --accent: #86aaf5;
-    --accent-soft: #222c40;
-    --mark: #6b5a1c;
-  }
+/* data-theme is set on <html> before first paint: the reader's saved choice,
+   or their system setting if they have never used the toggle. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #15181d;
+  --bg-soft: #1c2026;
+  --text: #dfe4ea;
+  --muted: #96a1b0;
+  --border: #2c323b;
+  --accent: #86aaf5;
+  --accent-soft: #222c40;
+  --mark: #6b5a1c;
 }
 
 * { box-sizing: border-box; }
@@ -73,16 +74,14 @@ a:hover { text-decoration: underline; }
 }
 .icon-btn:hover { background: var(--bg-soft); }
 
-.brand {
-  flex: 0 1 auto;
-  min-width: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  color: var(--text);
-  font-weight: 600;
-}
-.brand:hover { text-decoration: none; }
+.brand { flex: none; display: block; line-height: 0; }
+.brand img { display: block; height: 36px; width: auto; }
+.brand .logo-dark,
+[data-theme="dark"] .brand .logo-light,
+.icon-sun,
+[data-theme="dark"] .icon-moon { display: none; }
+[data-theme="dark"] .brand .logo-dark,
+[data-theme="dark"] .icon-sun { display: block; }
 
 .search {
   position: relative;
@@ -155,6 +154,18 @@ mark { background: var(--mark); color: inherit; border-radius: 2px; }
 .sidebar ul { list-style: none; margin: 0; padding: 0; }
 .sidebar ul ul { margin-left: 13px; padding-left: 8px; border-left: 1px solid var(--border); }
 .sidebar [hidden] { display: none; }
+
+.nav-home {
+  display: block;
+  margin: 0 0 8px;
+  padding: 6px 8px 6px 34px;
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 600;
+}
+.nav-home:hover { background: var(--border); text-decoration: none; }
+.nav-home[aria-current="page"] { color: var(--accent); }
 
 .nav-row { display: flex; align-items: center; border-radius: 6px; }
 .nav-row:hover { background: var(--border); }
@@ -294,10 +305,6 @@ th { font-weight: 600; white-space: nowrap; }
   .search-results { position: fixed; top: calc(var(--topbar-h) + 6px); left: 8px; right: 8px; width: auto; }
   article h1 { font-size: 1.65rem; }
   article h2 { font-size: 1.3rem; }
-}
-
-@media (max-width: 480px) {
-  .brand { flex-basis: 40%; }
 }
 
 @media (prefers-reduced-motion: reduce) {

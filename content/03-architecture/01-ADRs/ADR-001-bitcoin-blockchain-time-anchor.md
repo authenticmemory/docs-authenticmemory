@@ -1,9 +1,8 @@
-# Architecture Decision Record - Authentic Memory
-ADR-010-bitcoin-blockchain-time-anchor.md
+# ADR 010: Bitcoin blockchain time anchor
 
-## Title
+## Description
 
-Use the Bitcoin blockchain as the primary time anchor for Authentic Memory proof records
+Use the Bitcoin blockchain as the primary time anchor for Authentic Memory proof records.
 
 ## Status
 

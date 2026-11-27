@@ -1,5 +1,4 @@
-# Architecture Decision Record - Authentic Memory
-ADR-015-RFC3161-second-time-anchor.md
+# ADR 015: RFC 3161 second time anchor
 
 ## Title
 

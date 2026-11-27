@@ -5,6 +5,14 @@
   var root = document.body.getAttribute('data-root') || '';
   var mobile = window.matchMedia('(max-width: 860px)');
 
+  // --------------------------------------------------- light / dark mode
+
+  document.getElementById('theme-toggle').addEventListener('click', function () {
+    var theme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', theme);
+    try { localStorage.setItem('theme', theme); } catch (e) {}
+  });
+
   // ------------------------------------------------- sidebar show / hide
 
   document.getElementById('sidebar-toggle').addEventListener('click', function () {
@@ -21,24 +29,42 @@
 
   // --------------------------------------------- expand / collapse nodes
 
+  // Only one path through the tree is ever open: opening a branch closes every
+  // branch that is not one of its ancestors. The open path is remembered for the
+  // browser session so it survives page changes; a fresh visit starts collapsed.
+
   var sidebar = document.getElementById('sidebar');
+
+  // The chain of expandable items from the top of the tree down to `item`.
+  function pathTo(item, includeSelf) {
+    var path = [];
+    var li = includeSelf ? item : item && item.parentElement.closest('li[data-nav-id]');
+    for (; li; li = li.parentElement.closest('li[data-nav-id]')) path.unshift(li.getAttribute('data-nav-id'));
+    return path;
+  }
+
+  function setOpenPath(path) {
+    Array.prototype.forEach.call(sidebar.querySelectorAll('li[data-nav-id]'), function (li) {
+      var open = path.indexOf(li.getAttribute('data-nav-id')) >= 0;
+      li.querySelector('.nav-toggle').setAttribute('aria-expanded', String(open));
+      li.querySelector('ul').hidden = !open;
+    });
+    try { sessionStorage.setItem('nav-open', JSON.stringify(path)); } catch (e) {}
+  }
+
   sidebar.addEventListener('click', function (event) {
     var trigger = event.target.closest('[data-nav-toggle]');
-    if (!trigger) return;
-    var item = trigger.closest('li');
-    var toggle = item.querySelector('.nav-toggle');
-    var list = item.querySelector('ul');
-    var open = toggle.getAttribute('aria-expanded') !== 'true';
-    toggle.setAttribute('aria-expanded', String(open));
-    list.hidden = !open;
-    // Remember open branches for this browser session, so they survive page changes.
-    try {
-      var ids = Array.prototype.map.call(
-        sidebar.querySelectorAll('.nav-toggle[aria-expanded="true"]'),
-        function (t) { return t.closest('li').getAttribute('data-nav-id'); }
-      );
-      sessionStorage.setItem('nav-open', JSON.stringify(ids));
-    } catch (e) {}
+    var link = event.target.closest('a');
+    if (trigger) {
+      // Arrow (or a section title with no page of its own): open or close that branch.
+      var item = trigger.closest('li');
+      var isOpen = item.querySelector('.nav-toggle').getAttribute('aria-expanded') === 'true';
+      setOpenPath(pathTo(item, !isOpen));
+    } else if (link) {
+      // Following a link: the page that loads next shows only the path to that page.
+      var li = link.closest('li');
+      setOpenPath(li ? pathTo(li, li.hasAttribute('data-nav-id')) : []);
+    }
   });
 
   var current = sidebar.querySelector('[aria-current="page"]');

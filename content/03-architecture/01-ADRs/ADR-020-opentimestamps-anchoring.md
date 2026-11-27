@@ -1,5 +1,4 @@
-# Architecture Decision Record - Authentic Memory
-ADR-002-opentimestamps-anchoring.md
+# ADR 020: Opentimestamps anchoring.md
 
 ## Title
 

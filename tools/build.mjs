@@ -211,21 +211,29 @@ function pageHtml(page, tree, prev, next) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
 <link rel="stylesheet" href="${r}assets/style.css">
-<script>try{if(localStorage.getItem('nav-collapsed')==='1')document.documentElement.classList.add('nav-collapsed')}catch(e){}</script>
+<script>(function(){var d=document.documentElement,t=null;try{t=localStorage.getItem('theme');if(localStorage.getItem('nav-collapsed')==='1')d.classList.add('nav-collapsed')}catch(e){}if(t!=='dark'&&t!=='light')t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';d.setAttribute('data-theme',t)})()</script>
 </head>
 <body data-root="${r}">
 <header class="topbar">
   <button type="button" id="sidebar-toggle" class="icon-btn" aria-label="Toggle navigation" aria-controls="sidebar">
     <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
   </button>
-  <a class="brand" href="${r}index.html">${esc(config.title)}</a>
+  <a class="brand" href="${esc(config.logoLink)}">
+    <img class="logo-light" src="${r}assets/${esc(config.logo)}" alt="Authentic Memory">
+    <img class="logo-dark" src="${r}assets/${esc(config.logoDark)}" alt="Authentic Memory">
+  </a>
   <div class="search" role="search">
     <input id="search-input" type="search" placeholder="Search…" autocomplete="off" spellcheck="false" aria-label="Search the manual">
     <div id="search-results" class="search-results" hidden></div>
   </div>
+  <button type="button" id="theme-toggle" class="icon-btn" aria-label="Switch between light and dark mode" title="Light / dark mode">
+    <svg class="icon-moon" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M16.5 12.2A7 7 0 0 1 7.8 3.5a7 7 0 1 0 8.7 8.7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    <svg class="icon-sun" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="10" cy="10" r="3.4"/><path d="M10 2.5v1.8M10 15.7v1.8M2.5 10h1.8M15.7 10h1.8M4.7 4.7l1.3 1.3M14 14l1.3 1.3M4.7 15.3 6 14M14 6l1.3-1.3"/></g></svg>
+  </button>
 </header>
 <div id="backdrop" class="backdrop"></div>
 <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+<a class="nav-home" href="${r}index.html"${page.src === 'index.md' ? ' aria-current="page"' : ''}>Manual home</a>
 ${navHtml(tree, page)}
 </nav>
 ${NAV_RESTORE}

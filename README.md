@@ -30,4 +30,5 @@ table of contents in `content/index.md` and the HTML never fall behind the Markd
   `<!-- toc:end -->` is regenerated on each build; everything outside it is yours to edit.
 - **Do not edit anything in `docs/`**. It is emptied and regenerated on every build
   (only a `CNAME` file is kept). The look and
-  behaviour live in [tools/theme/](tools/theme/); the site title is in `manual.config.json`.
+  behaviour live in [tools/theme/](tools/theme/), including the header logo; the logo's link
+  and the title shown in browser tabs are in `manual.config.json`.
