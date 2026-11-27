@@ -1,0 +1,27 @@
+README.md
+  s_a644500730bd65::t_003d48cc3d7504 5-6,17,24-25,28,30-31
+manual.config.json
+  s_a644500730bd65::t_ff11ec8d367ab0 3-4
+package.json
+  s_a644500730bd65::t_5f3351da71b48e 9
+tools/build.mjs
+  s_a644500730bd65::t_8918612d06aa12 2,4-5,20-22,36-37,47-48,70-72,79,229-233,238-239,257,272
+tools/hooks/pre-commit
+  s_a644500730bd65::t_ee4dba975c9227 2-3,13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "dfb4ef4ccca0d2173ee55573202fdd29ea082323",
+  "prompts": {},
+  "sessions": {
+    "s_a644500730bd65": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b31df9a9-70be-4120-b96a-e8948fcfc928",
+        "model": "unknown"
+      },
+      "human_author": "Peter Van Garderen <vangarderen.peter@gmail.com>"
+    }
+  }
+}
