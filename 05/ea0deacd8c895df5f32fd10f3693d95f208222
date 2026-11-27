@@ -1,0 +1,78 @@
+content/01-mission/index.md
+  h_10c93bba641ef0 1-7
+content/05-software/index.md
+  h_10c93bba641ef0 1
+content/04-architecture/index.md
+  h_10c93bba641ef0 1-10
+content/03-decisions/index.md
+  h_10c93bba641ef0 1-9
+content/index.md
+  h_10c93bba641ef0 1,3-5,8-12
+content/02-requirements/index.md
+  h_10c93bba641ef0 1-14
+content/02-requirements/05-quality/03-scalability
+  h_10c93bba641ef0 1
+content/02-requirements/01-standards/index.md
+  h_10c93bba641ef0 1-12
+README.md
+  s_a644500730bd65::t_2c4643a20259df 19,30-33
+tools/build.mjs
+  s_a644500730bd65::t_5cd92ed07e0b99 5-6,101,111
+tools/hooks/pre-commit
+  s_a644500730bd65::t_f33bebff1b58f1 2,13
+docs/architecture/index.html
+  h_10c93bba641ef0 31,37,39,41-43,45,48
+docs/assets/search-index.js
+  h_10c93bba641ef0 1
+docs/decisions/anchoring/ADR-010-bitcoin-blockchain-time-anchor.html
+  h_10c93bba641ef0 31,91
+docs/decisions/anchoring/ADR-015-rfc-3161-time-anchor.html
+  h_10c93bba641ef0 31
+docs/decisions/anchoring/ADR-020-opentimestamps-anchor.html
+  h_10c93bba641ef0 31
+docs/decisions/anchoring/ADR-030-sha256-file-fingerprint.html
+  h_10c93bba641ef0 31,87
+docs/decisions/anchoring/index.html
+  h_10c93bba641ef0 6,31,39
+docs/decisions/index.html
+  h_10c93bba641ef0 6,31,36-43,46
+docs/index.html
+  h_10c93bba641ef0 31,36,38-39,42-46,50
+docs/mission/index.html
+  h_10c93bba641ef0 6,31,36-39,42
+docs/requirements/index.html
+  h_10c93bba641ef0 6,31,36-37,42-52,57
+docs/requirements/quality/scalability
+  h_10c93bba641ef0 1
+docs/requirements/quality/security.html
+  h_10c93bba641ef0 1-44
+docs/requirements/standards/index.html
+  h_10c93bba641ef0 6,31,36,48
+docs/requirements/standards/production.html
+  h_10c93bba641ef0 31,53
+docs/requirements/standards/staging.html
+  h_10c93bba641ef0 31,46
+docs/software/index.html
+  h_10c93bba641ef0 6,31,36,39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "05ea0deacd8c895df5f32fd10f3693d95f208222",
+  "prompts": {},
+  "humans": {
+    "h_10c93bba641ef0": {
+      "author": "Peter Van Garderen <vangarderen.peter@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_a644500730bd65": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b31df9a9-70be-4120-b96a-e8948fcfc928",
+        "model": "unknown"
+      },
+      "human_author": "Peter Van Garderen <vangarderen.peter@gmail.com>"
+    }
+  }
+}
