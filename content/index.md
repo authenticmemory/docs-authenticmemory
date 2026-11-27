@@ -1,34 +1,12 @@
-# Authentic Memory Docs
+# Authentic Memory docs
 
-> **Draft.** This is placeholder content. Replace it with the real manual.
+> **This manual describes how our technology is designed and built.**
+>
+> [Authentic Memory](https://authenticmemory.org) is protecting historical records in a synthetic age. We provide non-profit infrastructure to ensure that humanity's historical record remains distinguishable from AI-generated content. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-Everything in this manual is written in Markdown. The table of contents below is regenerated from the folder structure on every commit, so do not edit it by hand.
-
-## Contents
-
-<!-- toc:start -->
-- [Getting Started](01-getting-started/index.md)
-  - [Installation](01-getting-started/01-installation.md)
-  - [Configuration](01-getting-started/02-configuration.md)
-  - [First Steps](01-getting-started/03-first-steps.md)
-- [Guides](02-guides/index.md)
-  - [Authentication](02-guides/01-authentication.md)
-  - [Data Model](02-guides/02-data-model.md)
-  - [Deployment](02-guides/03-deployment/index.md)
-    - [Staging](02-guides/03-deployment/01-staging.md)
-    - [Production](02-guides/03-deployment/02-production.md)
-- [Architecture](03-architecture/index.md)
-  - [ADRs](03-architecture/01-ADRs/index.md)
-    - [ADR 010: Bitcoin blockchain time anchor](03-architecture/01-ADRs/ADR-010-bitcoin-blockchain-time-anchor.md)
-    - [ADR 015: RFC 3161 second time anchor](03-architecture/01-ADRs/ADR-015-rfc-3161-time-anchor.md)
-    - [ADR 020: Opentimestamps anchoring.md](03-architecture/01-ADRs/ADR-020-opentimestamps-anchor.md)
-    - [Architecture Decision Record - Authentic Memory](03-architecture/01-ADRs/ADR-030-sha256-file-fingerprint.md)
-  - [Component Model](03-architecture/02-component-model.md)
-  - [Data Model](03-architecture/03-data-model.md)
-- [Reference](04-reference/index.md)
-  - [API](04-reference/01-api.md)
-  - [CLI](04-reference/02-cli.md)
-  - [Glossary](04-reference/03-glossary.md)
-<!-- toc:end -->
+- If you are **new to Authentic Memory**, check out a [demonstration](https://authenticmemory.org/how-it-works/) and explanation of how it works.
+- If you would like to **verify an Authentic Memory proof** record visit [verify.authenticmemory.org](https://verify.authenticmemory.org).
+- If you manage an archival collection and would like to **use Authentic Memory anchoring**, see this explanation and [instructions](https://authenticmemory.org/for-institutions/).
+- If you manage an archival collection and would first like to **understand how Authentic Memory works** before committing to a collaboration, this [technology overview](https://authenticmemory.org/technology/) page provides the clearest explanation. 
+- Otherwise, this manual provides the most detailed and **current technical documentation**.

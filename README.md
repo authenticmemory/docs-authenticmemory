@@ -16,7 +16,7 @@ npm run watch    # rebuild whenever a file changes
 ```
 
 Every commit runs the build through the pre-commit hook and adds the result, so the
-table of contents in `content/index.md` and the HTML never fall behind the Markdown.
+HTML never falls behind the Markdown.
 
 ## Writing pages
 
@@ -27,8 +27,10 @@ table of contents in `content/index.md` and the HTML never fall behind the Markd
 - **Images** and other files go in `content/` next to the pages that use them.
 - **Links** between pages point at the Markdown file (`../02-guides/01-authentication.md`).
   They work on GitHub as written and are converted to `.html` in the built site.
-- **`content/index.md`** is the home page. The list between `<!-- toc:start -->` and
-  `<!-- toc:end -->` is regenerated on each build; everything outside it is yours to edit.
+- **`content/index.md`** is the home page. It is entirely hand-written.
+- **Section contents** can be generated: put the lines `<!-- toc:start -->` and
+  `<!-- toc:end -->` in a section's `index.md` and the build fills in the list of pages
+  in that section between them. Without the markers, the page is left as you wrote it.
 - **Do not edit anything in `docs/`**. It is emptied and regenerated on every build
   (only a `CNAME` file is kept). The look and
   behaviour live in [tools/theme/](tools/theme/), including the header logo; the logo's link

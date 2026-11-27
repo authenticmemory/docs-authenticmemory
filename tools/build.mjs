@@ -2,8 +2,8 @@
 // Builds the manual: content/**/*.md  ->  docs/**/*.html
 //
 //  1. Scans the content tree (folders = sections, NN- prefixes = order).
-//  2. Regenerates the table of contents in content/index.md, and in any section
-//     index.md that contains the toc markers.
+//  2. Regenerates the list of pages in any section index.md that contains the
+//     toc markers (the home page, content/index.md, is left alone).
 //  3. Renders every page to static HTML with the sidebar navigation baked in.
 //  4. Writes the search data used by lunr.js in the browser.
 //
@@ -97,8 +97,8 @@ function fillToc(text, nodes, base) {
   return `${text.slice(0, start)}${TOC_START}\n${tocMarkdown(nodes, base)}${text.slice(end)}`;
 }
 
-// The home page always gets the full contents (created or appended if missing).
 // A section's index.md gets a list of its own pages wherever it has the markers.
+// The home page (content/index.md) is never touched: it is entirely hand-written.
 function updateTocs(tree) {
   const changed = [];
   const save = (rel, before, after) => {
@@ -108,10 +108,7 @@ function updateTocs(tree) {
   };
 
   const home = path.join(DOCS, 'index.md');
-  const before = fs.existsSync(home) ? fs.readFileSync(home, 'utf8') : null;
-  const empty = `## Contents\n\n${TOC_START}\n${TOC_END}\n`;
-  const text = before === null ? `# ${config.title}\n\n${empty}` : before;
-  save('index.md', before, fillToc(text, tree, '') ?? fillToc(`${text.trimEnd()}\n\n${empty}`, tree, ''));
+  if (!fs.existsSync(home)) save('index.md', null, `# ${config.title}\n`); // the site needs a home page
 
   (function walk(nodes) {
     for (const n of nodes) {

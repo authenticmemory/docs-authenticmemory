@@ -1,5 +1,5 @@
 #!/bin/sh
-# Rebuilds the manual on every commit so the tables of contents in content/
+# Rebuilds the manual on every commit so the section contents lists in content/
 # and the generated site in docs/ always match the markdown. Enabled by `npm install` (core.hooksPath).
 set -e
 cd "$(git rev-parse --show-toplevel)"
@@ -10,4 +10,4 @@ if [ ! -d node_modules ]; then
 fi
 
 node tools/build.mjs
-git add -A -- content/index.md ':(glob)content/**/index.md' docs
+git add -A -- ':(glob)content/*/**/index.md' docs
