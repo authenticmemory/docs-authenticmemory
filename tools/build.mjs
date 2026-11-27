@@ -233,7 +233,7 @@ function pageHtml(page, tree, prev, next) {
 </header>
 <div id="backdrop" class="backdrop"></div>
 <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-<a class="nav-home" href="${r}index.html"${page.src === 'index.md' ? ' aria-current="page"' : ''}>Manual home</a>
+<a class="nav-home" href="${r}index.html"${page.src === 'index.md' ? ' aria-current="page"' : ''}>Introduction</a>
 ${navHtml(tree, page)}
 </nav>
 ${NAV_RESTORE}

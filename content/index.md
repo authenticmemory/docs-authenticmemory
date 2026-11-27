@@ -1,4 +1,4 @@
-# Authentic Memory Developer Manual
+# Authentic Memory Docs
 
 > **Draft.** This is placeholder content. Replace it with the real manual.
 
@@ -21,9 +21,9 @@ Everything in this manual is written in Markdown. The table of contents below is
     - [Production](02-guides/03-deployment/02-production.md)
 - [Architecture](03-architecture/index.md)
   - [ADRs](03-architecture/01-ADRs/index.md)
-    - [ADR 010: Bitcoin blockchain time anchor](03-architecture/01-ADRs/ADR-001-bitcoin-blockchain-time-anchor.md)
-    - [ADR 015: RFC 3161 second time anchor](03-architecture/01-ADRs/ADR-015-RFC3161-second-time-anchor.md)
-    - [ADR 020: Opentimestamps anchoring.md](03-architecture/01-ADRs/ADR-020-opentimestamps-anchoring.md)
+    - [ADR 010: Bitcoin blockchain time anchor](03-architecture/01-ADRs/ADR-010-bitcoin-blockchain-time-anchor.md)
+    - [ADR 015: RFC 3161 second time anchor](03-architecture/01-ADRs/ADR-015-rfc-3161-time-anchor.md)
+    - [ADR 020: Opentimestamps anchoring.md](03-architecture/01-ADRs/ADR-020-opentimestamps-anchor.md)
     - [Architecture Decision Record - Authentic Memory](03-architecture/01-ADRs/ADR-030-sha256-file-fingerprint.md)
   - [Component Model](03-architecture/02-component-model.md)
   - [Data Model](03-architecture/03-data-model.md)
