@@ -1,4 +1,5 @@
 {
   "title": "Authentic Memory Developer Manual",
-  "docsDir": "docs"
+  "contentDir": "content",
+  "outDir": "docs"
 }

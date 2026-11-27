@@ -1,6 +1,6 @@
 #!/bin/sh
-# Rebuilds the manual on every commit so docs/index.md (the table of contents)
-# and the generated HTML always match the markdown. Enabled by `npm install` (core.hooksPath).
+# Rebuilds the manual on every commit so content/index.md (the table of contents)
+# and the generated site in docs/ always match the markdown. Enabled by `npm install` (core.hooksPath).
 set -e
 cd "$(git rev-parse --show-toplevel)"
 
@@ -10,4 +10,4 @@ if [ ! -d node_modules ]; then
 fi
 
 node tools/build.mjs
-git add -- docs/index.md docs/.nojekyll docs/assets ':(glob)docs/**/*.html'
+git add -A -- content/index.md docs

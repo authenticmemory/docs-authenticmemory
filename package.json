@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "node tools/build.mjs",
-    "watch": "node --watch-path=docs --watch-path=tools --watch-path=manual.config.json tools/build.mjs",
+    "watch": "node --watch-path=content --watch-path=tools --watch-path=manual.config.json tools/build.mjs",
     "prepare": "git config core.hooksPath tools/hooks || true"
   },
   "devDependencies": {
