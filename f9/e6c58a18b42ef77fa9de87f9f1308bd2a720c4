@@ -1,0 +1,90 @@
+content/03-architecture/01-ADRs/ADR-020-Open-Timestamps
+  h_10c93bba641ef0 1
+content/03-architecture/01-ADRs/index.md
+  h_10c93bba641ef0 1-2
+README.md
+  s_a644500730bd65::t_7bcc6b55788904 30-32
+content/01-getting-started/03-first-steps.md
+  s_a644500730bd65::t_92e2d03d4bea9f 22
+content/01-getting-started/index.md
+  s_a644500730bd65::t_12c0baea383b5f 9-13
+content/02-guides/03-deployment/index.md
+  s_a644500730bd65::t_f59b193b037d18 9-12
+content/02-guides/index.md
+  s_a644500730bd65::t_bd2679ce81a6ff 9,13-15
+content/04-reference/index.md
+  s_a644500730bd65::t_792247810c0369 7,11
+content/index.md
+  s_a644500730bd65::t_96fc237e8a3e1e 23
+tools/build.mjs
+  s_a644500730bd65::t_437d298a515b04 5-6,80,82-83,86-87,92-126,173-174,184-185,187,195-197,231,266,301
+tools/hooks/pre-commit
+  s_a644500730bd65::t_a68e1fff01704f 2,13
+tools/theme/app.js
+  s_a644500730bd65::t_1d4bd6f176eb57 34-41,45
+docs/architecture/ADRs/ADR-020-Open-Timestamps
+  h_10c93bba641ef0 1
+docs/architecture/ADRs/index.html
+  h_10c93bba641ef0 1-37
+docs/architecture/component-model.html
+  h_10c93bba641ef0 23,25,30
+docs/architecture/data-model.html
+  h_10c93bba641ef0 23,25
+docs/architecture/index.html
+  h_10c93bba641ef0 23,25,38
+docs/assets/app.js
+  h_10c93bba641ef0 34-41,45
+docs/assets/search-index.js
+  h_10c93bba641ef0 1
+docs/getting-started/configuration.html
+  h_10c93bba641ef0 23,25
+docs/getting-started/first-steps.html
+  h_10c93bba641ef0 23,25
+docs/getting-started/index.html
+  h_10c93bba641ef0 23,25,32,34-36,38
+docs/getting-started/installation.html
+  h_10c93bba641ef0 23,25
+docs/guides/authentication.html
+  h_10c93bba641ef0 23,25
+docs/guides/data-model.html
+  h_10c93bba641ef0 23,25
+docs/guides/deployment/index.html
+  h_10c93bba641ef0 23,25,32,34-35,37
+docs/guides/deployment/production.html
+  h_10c93bba641ef0 23,25
+docs/guides/deployment/staging.html
+  h_10c93bba641ef0 23,25
+docs/guides/index.html
+  h_10c93bba641ef0 23,25,32,36-41,43
+docs/index.html
+  h_10c93bba641ef0 23,25,58
+docs/reference/api.html
+  h_10c93bba641ef0 23,25
+docs/reference/cli.html
+  h_10c93bba641ef0 23,25
+docs/reference/glossary.html
+  h_10c93bba641ef0 23,25
+docs/reference/index.html
+  h_10c93bba641ef0 23,25,31,37
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f9e6c58a18b42ef77fa9de87f9f1308bd2a720c4",
+  "prompts": {},
+  "humans": {
+    "h_10c93bba641ef0": {
+      "author": "Peter Van Garderen <vangarderen.peter@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_a644500730bd65": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b31df9a9-70be-4120-b96a-e8948fcfc928",
+        "model": "unknown"
+      },
+      "human_author": "Peter Van Garderen <vangarderen.peter@gmail.com>"
+    }
+  }
+}
