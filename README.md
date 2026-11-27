@@ -1,4 +1,4 @@
-Developer documentation hosted at docs.authenticmemory.org
+See [docs.authenticmemory.org](https://docs.authenticmemory.org)
 
 ## How it works
 
