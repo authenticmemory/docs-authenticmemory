@@ -1,0 +1,75 @@
+content/03-architecture/02-component-model.md
+  h_10c93bba641ef0 1
+README.md
+  h_10c93bba641ef0 7,9
+  h_10c93bba641ef0 8
+content/03-architecture/01-ADRs/ADR-020-opentimestamps-anchoring.md
+  h_10c93bba641ef0 1-52
+content/03-architecture/01-ADRs/ADR-015-RFC3161-second-time-anchor.md
+  h_10c93bba641ef0 1-28
+"content/03-architecture/01-ADRs/ADR-001-bitcoin-blockchain-time-anchor copy.md"
+  h_10c93bba641ef0 1-63
+content/03-architecture/01-ADRs/ADR-030-sha256-file-fingerprint.md
+  h_10c93bba641ef0 1-58
+content/index.md
+  h_10c93bba641ef0 24-27
+"docs/architecture/ADRs/ADR-001-bitcoin-blockchain-time-anchor copy.html"
+  h_10c93bba641ef0 1-90
+docs/architecture/ADRs/ADR-015-RFC3161-second-time-anchor.html
+  h_10c93bba641ef0 6,23,28-38,41
+docs/architecture/ADRs/ADR-020-opentimestamps-anchoring.html
+  h_10c93bba641ef0 6,23,28-72,75
+docs/architecture/ADRs/ADR-030-sha256-file-fingerprint.html
+  h_10c93bba641ef0 1-85
+docs/architecture/ADRs/index.html
+  h_10c93bba641ef0 23,31
+docs/architecture/component-model.html
+  h_10c93bba641ef0 23,28,31
+docs/architecture/data-model.html
+  h_10c93bba641ef0 23
+docs/architecture/index.html
+  h_10c93bba641ef0 23
+docs/assets/search-index.js
+  h_10c93bba641ef0 1
+docs/getting-started/configuration.html
+  h_10c93bba641ef0 23
+docs/getting-started/first-steps.html
+  h_10c93bba641ef0 23
+docs/getting-started/index.html
+  h_10c93bba641ef0 23
+docs/getting-started/installation.html
+  h_10c93bba641ef0 23
+docs/guides/authentication.html
+  h_10c93bba641ef0 23
+docs/guides/data-model.html
+  h_10c93bba641ef0 23
+docs/guides/deployment/index.html
+  h_10c93bba641ef0 23
+docs/guides/deployment/production.html
+  h_10c93bba641ef0 23
+docs/guides/deployment/staging.html
+  h_10c93bba641ef0 23
+docs/guides/index.html
+  h_10c93bba641ef0 23
+docs/index.html
+  h_10c93bba641ef0 23,60-63
+docs/reference/api.html
+  h_10c93bba641ef0 23
+docs/reference/cli.html
+  h_10c93bba641ef0 23
+docs/reference/glossary.html
+  h_10c93bba641ef0 23
+docs/reference/index.html
+  h_10c93bba641ef0 23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "3399378d5f233f9ceac06ecce7111def63d06786",
+  "prompts": {},
+  "humans": {
+    "h_10c93bba641ef0": {
+      "author": "Peter Van Garderen <vangarderen.peter@gmail.com>"
+    }
+  }
+}
