@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="manual-build">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Authentication · Authentic Memory Developer Manual</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>try{if(localStorage.getItem('nav-collapsed')==='1')document.documentElement.classList.add('nav-collapsed')}catch(e){}</script>
+</head>
+<body data-root="../">
+<header class="topbar">
+  <button type="button" id="sidebar-toggle" class="icon-btn" aria-label="Toggle navigation" aria-controls="sidebar">
+    <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+  </button>
+  <a class="brand" href="../index.html">Authentic Memory Developer Manual</a>
+  <div class="search" role="search">
+    <input id="search-input" type="search" placeholder="Search…" autocomplete="off" spellcheck="false" aria-label="Search the manual">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+</header>
+<div id="backdrop" class="backdrop"></div>
+<nav id="sidebar" class="sidebar" aria-label="Table of contents">
+<ul class="nav-list"><li><div class="nav-row"><button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Toggle Getting Started"></button><a href="../01-getting-started/index.html">Getting Started</a></div><ul hidden><li><div class="nav-row"><a href="../01-getting-started/01-installation.html">Installation</a></div></li><li><div class="nav-row"><a href="../01-getting-started/02-configuration.html">Configuration</a></div></li><li><div class="nav-row"><a href="../01-getting-started/03-first-steps.html">First Steps</a></div></li></ul></li><li><div class="nav-row"><button type="button" class="nav-toggle" data-nav-toggle aria-expanded="true" aria-label="Toggle Guides"></button><a href="index.html">Guides</a></div><ul><li><div class="nav-row"><a href="01-authentication.html" aria-current="page">Authentication</a></div></li><li><div class="nav-row"><a href="02-data-model.html">Data Model</a></div></li><li><div class="nav-row"><button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Toggle Deployment"></button><a href="03-deployment/index.html">Deployment</a></div><ul hidden><li><div class="nav-row"><a href="03-deployment/01-staging.html">Staging</a></div></li><li><div class="nav-row"><a href="03-deployment/02-production.html">Production</a></div></li></ul></li></ul></li><li><div class="nav-row"><button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Toggle Reference"></button><a href="../03-reference/index.html">Reference</a></div><ul hidden><li><div class="nav-row"><a href="../03-reference/01-api.html">API</a></div></li><li><div class="nav-row"><a href="../03-reference/02-cli.html">CLI</a></div></li><li><div class="nav-row"><a href="../03-reference/03-glossary.html">Glossary</a></div></li></ul></li></ul>
+</nav>
+<main class="content">
+<article>
+<h1 id="authentication" tabindex="-1">Authentication</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<h2 id="api-tokens" tabindex="-1">API tokens</h2>
+<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<pre><code class="language-http">GET /v1/records HTTP/1.1
+Host: api.example.org
+Authorization: Bearer &lt;token&gt;
+</code></pre>
+<h2 id="rotating-credentials" tabindex="-1">Rotating credentials</h2>
+<p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.</p>
+<h2 id="troubleshooting" tabindex="-1">Troubleshooting</h2>
+<ul>
+<li><strong>401 Unauthorized</strong>: lorem ipsum dolor sit amet.</li>
+<li><strong>403 Forbidden</strong>: consectetur adipiscing elit.</li>
+</ul>
+
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="index.html"><span>Previous</span>Guides</a><a class="next" href="02-data-model.html"><span>Next</span>Data Model</a></nav>
+</main>
+<script defer src="../assets/lunr.min.js"></script>
+<script defer src="../assets/search-index.js"></script>
+<script defer src="../assets/app.js"></script>
+</body>
+</html>

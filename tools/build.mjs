@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Builds the manual: docs/**/*.md  ->  site/**/*.html
+// Builds the manual in place: docs/**/*.md  ->  docs/**/*.html (next to its source)
 //
 //  1. Scans the docs tree (folders = sections, NN- prefixes = order).
 //  2. Regenerates the table of contents inside docs/index.md.
@@ -18,7 +18,8 @@ import anchor from 'markdown-it-anchor';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const config = JSON.parse(fs.readFileSync(path.join(ROOT, 'manual.config.json'), 'utf8'));
 const DOCS = path.join(ROOT, config.docsDir);
-const OUT = path.join(ROOT, config.outDir);
+const OUT = DOCS; // each page is written next to its markdown source
+const GENERATOR = '<meta name="generator" content="manual-build">';
 const THEME = path.join(ROOT, 'tools', 'theme');
 const TOC_START = '<!-- toc:start -->';
 const TOC_END = '<!-- toc:end -->';
@@ -32,8 +33,8 @@ const stripOrder = (name) => name.replace(/^\d+[-_.]/, '');
 // "02-data-model.md" -> "Data Model"
 const humanize = (name) =>
   stripOrder(name).replace(/\.md$/, '').replace(/[-_]+/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
-// docs-relative source path -> site-relative output path
-const toOut = (src) => src.split('/').map(stripOrder).join('/').replace(/\.md$/, '.html');
+// docs-relative source path -> docs-relative output path
+const toOut = (src) => src.replace(/\.md$/, '.html');
 
 function readTitle(file, fallback) {
   const text = fs.readFileSync(file, 'utf8').replace(/^(```|~~~)[\s\S]*?^\1.*$/gm, '');
@@ -42,8 +43,6 @@ function readTitle(file, fallback) {
 }
 
 // ---------------------------------------------------------------- scan tree
-
-const assets = []; // non-markdown files (images etc.) copied through as-is
 
 function scan(dir, rel = '') {
   const entries = fs
@@ -66,9 +65,7 @@ function scan(dir, rel = '') {
         id: toOut(src),
         children,
       });
-    } else if (!e.name.endsWith('.md')) {
-      assets.push(src);
-    } else if (e.name !== 'index.md') {
+    } else if (e.name.endsWith('.md') && e.name !== 'index.md') {
       nodes.push({ title: readTitle(abs, humanize(e.name)), src, id: toOut(src), children: [] });
     }
   }
@@ -183,6 +180,7 @@ function pageHtml(page, tree, prev, next) {
 <html lang="en">
 <head>
 <meta charset="utf-8">
+${GENERATOR}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
 <link rel="stylesheet" href="${r}assets/style.css">
@@ -225,9 +223,19 @@ function write(rel, content) {
   fs.writeFileSync(file, content);
 }
 
+// Delete output from earlier builds so renamed or removed pages leave nothing behind.
+// Only HTML carrying our generator tag is touched; hand-written files are left alone.
+function removeGenerated(dir) {
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    const abs = path.join(dir, e.name);
+    if (e.isDirectory()) removeGenerated(abs);
+    else if (e.name.endsWith('.html') && fs.readFileSync(abs, 'utf8').includes(GENERATOR)) fs.rmSync(abs);
+  }
+  if (dir === DOCS) fs.rmSync(path.join(DOCS, 'assets'), { recursive: true, force: true });
+}
+
 function build() {
   if (!fs.existsSync(DOCS)) throw new Error(`Docs folder not found: ${DOCS}`);
-  assets.length = 0;
   const tree = scan(DOCS);
   const tocChanged = updateIndexMd(tree);
 
@@ -245,7 +253,7 @@ function build() {
     page.html = md.render(fs.readFileSync(path.join(DOCS, page.src), 'utf8'), { page });
   }
 
-  fs.rmSync(OUT, { recursive: true, force: true });
+  removeGenerated(DOCS);
   pages.forEach((page, i) => write(page.out, pageHtml(page, tree, pages[i - 1], pages[i + 1])));
 
   const searchDocs = pages.map((p, i) => ({
@@ -260,10 +268,10 @@ function build() {
   const require = createRequire(import.meta.url);
   write('assets/lunr.min.js', fs.readFileSync(require.resolve('lunr/lunr.min.js')));
   for (const f of fs.readdirSync(THEME)) write(`assets/${f}`, fs.readFileSync(path.join(THEME, f)));
-  for (const a of assets) write(toOut(a), fs.readFileSync(path.join(DOCS, a)));
+  write('.nojekyll', ''); // GitHub Pages: serve the files as-is
 
   const rel = (p) => path.relative(ROOT, p);
-  console.log(`Built ${pages.length} pages -> ${rel(OUT)}/index.html${tocChanged ? ` (updated ${rel(DOCS)}/index.md)` : ''}`);
+  console.log(`Built ${pages.length} pages -> ${rel(OUT)}/index.html${tocChanged ? ' (table of contents in index.md updated)' : ''}`);
 }
 
 build();
