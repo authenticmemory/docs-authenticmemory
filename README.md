@@ -4,8 +4,9 @@ Developer documentation hosted at docs.authenticmemory.org
 
 The manual is written in Markdown under [content/](content/). A small build script turns it
 into static HTML in [docs/](docs/), which is the complete, self-contained site: open
-`docs/index.html` straight from disk, or serve the folder from any static host
-(for GitHub Pages, publish from the `/docs` folder of `main`).
+`docs/index.html` straight from disk, or serve the folder from any static host.
+
+For this repo and online manual we are using GitHub Pages which publishes from the `/docs` directory.
 
 ```sh
 npm install      # once: installs the build tools and enables the pre-commit hook
@@ -27,9 +28,6 @@ table of contents in `content/index.md` and the HTML never fall behind the Markd
   They work on GitHub as written and are converted to `.html` in the built site.
 - **`content/index.md`** is the home page. The list between `<!-- toc:start -->` and
   `<!-- toc:end -->` is regenerated on each build; everything outside it is yours to edit.
-- **Section contents** work the same way: put those two marker lines in a section's
-  `index.md` and the build fills in the list of pages in that section. Without the
-  markers, the page is left exactly as you wrote it.
 - **Do not edit anything in `docs/`**. It is emptied and regenerated on every build
   (only a `CNAME` file is kept). The look and
   behaviour live in [tools/theme/](tools/theme/); the site title is in `manual.config.json`.
