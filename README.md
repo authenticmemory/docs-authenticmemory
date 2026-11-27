@@ -27,6 +27,9 @@ table of contents in `content/index.md` and the HTML never fall behind the Markd
   They work on GitHub as written and are converted to `.html` in the built site.
 - **`content/index.md`** is the home page. The list between `<!-- toc:start -->` and
   `<!-- toc:end -->` is regenerated on each build; everything outside it is yours to edit.
+- **Section contents** work the same way: put those two marker lines in a section's
+  `index.md` and the build fills in the list of pages in that section. Without the
+  markers, the page is left exactly as you wrote it.
 - **Do not edit anything in `docs/`**. It is emptied and regenerated on every build
   (only a `CNAME` file is kept). The look and
   behaviour live in [tools/theme/](tools/theme/); the site title is in `manual.config.json`.

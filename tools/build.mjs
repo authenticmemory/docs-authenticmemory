@@ -2,7 +2,8 @@
 // Builds the manual: content/**/*.md  ->  docs/**/*.html
 //
 //  1. Scans the content tree (folders = sections, NN- prefixes = order).
-//  2. Regenerates the table of contents inside content/index.md.
+//  2. Regenerates the table of contents in content/index.md, and in any section
+//     index.md that contains the toc markers.
 //  3. Renders every page to static HTML with the sidebar navigation baked in.
 //  4. Writes the search data used by lunr.js in the browser.
 //
@@ -76,34 +77,53 @@ function scan(dir, rel = '') {
   return nodes;
 }
 
-// ---------------------------------------------------- content/index.md (TOC)
+// ------------------------------------------------- tables of contents (TOC)
 
-function tocMarkdown(nodes, depth = 0) {
+// Links are written relative to `base`, the folder of the file holding the list.
+function tocMarkdown(nodes, base = '', depth = 0) {
   return nodes
     .map((n) => {
-      const label = n.src ? `[${n.title}](${n.src})` : `**${n.title}**`;
-      return `${'  '.repeat(depth)}- ${label}\n${tocMarkdown(n.children, depth + 1)}`;
+      const label = n.src ? `[${n.title}](${posix.relative(base, n.src)})` : `**${n.title}**`;
+      return `${'  '.repeat(depth)}- ${label}\n${tocMarkdown(n.children, base, depth + 1)}`;
     })
     .join('');
 }
 
-function updateIndexMd(tree) {
-  const file = path.join(DOCS, 'index.md');
-  const block = `${TOC_START}\n${tocMarkdown(tree)}${TOC_END}`;
-  const before = fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : null;
-  let after;
-  if (before === null) {
-    after = `# ${config.title}\n\n## Contents\n\n${block}\n`;
-  } else if (before.includes(TOC_START) && before.includes(TOC_END)) {
-    after =
-      before.slice(0, before.indexOf(TOC_START)) +
-      block +
-      before.slice(before.indexOf(TOC_END) + TOC_END.length);
-  } else {
-    after = `${before.trimEnd()}\n\n## Contents\n\n${block}\n`;
-  }
-  if (after !== before) fs.writeFileSync(file, after);
-  return after !== before;
+// Replace whatever sits between the toc markers. Returns null if the file has none.
+function fillToc(text, nodes, base) {
+  const start = text.indexOf(TOC_START);
+  const end = text.indexOf(TOC_END);
+  if (start < 0 || end < start) return null;
+  return `${text.slice(0, start)}${TOC_START}\n${tocMarkdown(nodes, base)}${text.slice(end)}`;
+}
+
+// The home page always gets the full contents (created or appended if missing).
+// A section's index.md gets a list of its own pages wherever it has the markers.
+function updateTocs(tree) {
+  const changed = [];
+  const save = (rel, before, after) => {
+    if (after === null || after === before) return;
+    fs.writeFileSync(path.join(DOCS, rel), after);
+    changed.push(rel);
+  };
+
+  const home = path.join(DOCS, 'index.md');
+  const before = fs.existsSync(home) ? fs.readFileSync(home, 'utf8') : null;
+  const empty = `## Contents\n\n${TOC_START}\n${TOC_END}\n`;
+  const text = before === null ? `# ${config.title}\n\n${empty}` : before;
+  save('index.md', before, fillToc(text, tree, '') ?? fillToc(`${text.trimEnd()}\n\n${empty}`, tree, ''));
+
+  (function walk(nodes) {
+    for (const n of nodes) {
+      if (!n.children.length) continue;
+      if (n.src) {
+        const section = fs.readFileSync(path.join(DOCS, n.src), 'utf8');
+        save(n.src, section, fillToc(section, n.children, posix.dirname(n.src)));
+      }
+      walk(n.children);
+    }
+  })(tree);
+  return changed;
 }
 
 // ----------------------------------------------------------------- markdown
@@ -150,26 +170,30 @@ const toText = (html) =>
 
 // --------------------------------------------------------------------- HTML
 
+// Every branch is rendered collapsed. Branches the reader opens are remembered for
+// the browser session only (see NAV_RESTORE), so a fresh visit starts fully collapsed.
 function navHtml(nodes, page, depth = 0) {
   if (!nodes.length) return '';
   const items = nodes.map((n) => {
     const current = n.src === page.src;
-    const open = n.children.length && (current || page.id.startsWith(`${n.id}/`));
     const label = n.src
       ? `<a href="${esc(relUrl(page, toOut(n.src)))}"${current ? ' aria-current="page"' : ''}>${esc(n.title)}</a>`
       : `<button type="button" class="nav-label" data-nav-toggle>${esc(n.title)}</button>`;
     if (!n.children.length) return `<li><div class="nav-row">${label}</div></li>`;
     return (
-      `<li><div class="nav-row">` +
-      `<button type="button" class="nav-toggle" data-nav-toggle aria-expanded="${open ? 'true' : 'false'}" aria-label="Toggle ${esc(n.title)}"></button>` +
+      `<li data-nav-id="${esc(n.id)}"><div class="nav-row">` +
+      `<button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Toggle ${esc(n.title)}"></button>` +
       `${label}</div>` +
-      `<ul${open ? '' : ' hidden'}>${navHtml(n.children, page, depth + 1)}</ul></li>`
+      `<ul hidden>${navHtml(n.children, page, depth + 1)}</ul></li>`
     );
   });
   return depth ? items.join('') : `<ul class="nav-list">${items.join('')}</ul>`;
 }
 
 const relUrl = (page, out) => posix.relative(posix.dirname(page.out), out);
+
+// Runs inline right after the sidebar so reopened branches never flicker.
+const NAV_RESTORE = `<script>try{JSON.parse(sessionStorage.getItem('nav-open')||'[]').forEach(function(id){var li=document.querySelector('#sidebar li[data-nav-id="'+id+'"]');if(li){li.querySelector('.nav-toggle').setAttribute('aria-expanded','true');li.querySelector('ul').hidden=false}})}catch(e){}</script>`;
 
 function pageHtml(page, tree, prev, next) {
   const root = posix.relative(posix.dirname(page.out), '') || '.';
@@ -204,6 +228,7 @@ function pageHtml(page, tree, prev, next) {
 <nav id="sidebar" class="sidebar" aria-label="Table of contents">
 ${navHtml(tree, page)}
 </nav>
+${NAV_RESTORE}
 <main class="content">
 <article>
 ${page.html}
@@ -238,7 +263,7 @@ function build() {
   if (!fs.existsSync(DOCS)) throw new Error(`Content folder not found: ${DOCS}`);
   assets.length = 0;
   const tree = scan(DOCS);
-  const tocChanged = updateIndexMd(tree);
+  const tocChanged = updateTocs(tree);
 
   // Flatten to reading order, remembering each page's section trail for search.
   const pages = [{ title: config.title, src: 'index.md', id: 'index.html', trail: [] }];
@@ -273,7 +298,7 @@ function build() {
   write('.nojekyll', ''); // GitHub Pages: serve the files as-is
 
   const rel = (p) => path.relative(ROOT, p);
-  console.log(`Built ${pages.length} pages -> ${rel(OUT)}/index.html${tocChanged ? ' (table of contents in index.md updated)' : ''}`);
+  console.log(`Built ${pages.length} pages -> ${rel(OUT)}/index.html${tocChanged.length ? ` (contents updated in ${tocChanged.join(', ')})` : ''}`);
 }
 
 build();

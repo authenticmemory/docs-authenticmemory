@@ -31,10 +31,18 @@
     var open = toggle.getAttribute('aria-expanded') !== 'true';
     toggle.setAttribute('aria-expanded', String(open));
     list.hidden = !open;
+    // Remember open branches for this browser session, so they survive page changes.
+    try {
+      var ids = Array.prototype.map.call(
+        sidebar.querySelectorAll('.nav-toggle[aria-expanded="true"]'),
+        function (t) { return t.closest('li').getAttribute('data-nav-id'); }
+      );
+      sessionStorage.setItem('nav-open', JSON.stringify(ids));
+    } catch (e) {}
   });
 
   var current = sidebar.querySelector('[aria-current="page"]');
-  if (current && current.scrollIntoView) current.scrollIntoView({ block: 'nearest' });
+  if (current && current.offsetParent && current.scrollIntoView) current.scrollIntoView({ block: 'nearest' });
 
   // -------------------------------------------------------------- search
 

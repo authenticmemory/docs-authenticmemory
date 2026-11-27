@@ -6,6 +6,10 @@ Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate veh
 
 ## In this section
 
+<!-- toc:start -->
 - [Authentication](01-authentication.md)
 - [Data Model](02-data-model.md)
 - [Deployment](03-deployment/index.md)
+  - [Staging](03-deployment/01-staging.md)
+  - [Production](03-deployment/02-production.md)
+<!-- toc:end -->

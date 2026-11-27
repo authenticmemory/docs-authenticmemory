@@ -6,6 +6,8 @@ Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, tur
 
 ## In this section
 
-- [Installation](01-installation.md): lorem ipsum dolor sit amet.
-- [Configuration](02-configuration.md): consectetur adipiscing elit.
-- [First Steps](03-first-steps.md): sed do eiusmod tempor.
+<!-- toc:start -->
+- [Installation](01-installation.md)
+- [Configuration](02-configuration.md)
+- [First Steps](03-first-steps.md)
+<!-- toc:end -->

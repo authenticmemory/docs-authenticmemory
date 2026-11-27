@@ -20,6 +20,7 @@ Everything in this manual is written in Markdown. The table of contents below is
     - [Staging](02-guides/03-deployment/01-staging.md)
     - [Production](02-guides/03-deployment/02-production.md)
 - [Architecture](03-architecture/index.md)
+  - [ADRs](03-architecture/01-ADRs/index.md)
   - [Component Model](03-architecture/02-component-model.md)
   - [Data Model](03-architecture/03-data-model.md)
 - [Reference](04-reference/index.md)

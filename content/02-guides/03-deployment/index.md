@@ -6,5 +6,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor i
 
 ## Environments
 
-- [Staging](01-staging.md): lorem ipsum dolor sit amet.
-- [Production](02-production.md): consectetur adipiscing elit.
+<!-- toc:start -->
+- [Staging](01-staging.md)
+- [Production](02-production.md)
+<!-- toc:end -->

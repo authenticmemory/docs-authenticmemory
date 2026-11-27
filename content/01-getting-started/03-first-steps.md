@@ -19,4 +19,4 @@ ipsum run --watch
 
 ## Where to go next
 
-Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor, ut ullamcorper ligula eu tempor congue, eros est euismod turpis. See the [Guides](../02-guides/index.md) for longer walkthroughs, or the [CLI reference](../03-reference/02-cli.md) for every command.
+Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor, ut ullamcorper ligula eu tempor congue, eros est euismod turpis. See the [Guides](../02-guides/index.md) for longer walkthroughs, or the [CLI reference](../04-reference/02-cli.md) for every command.
