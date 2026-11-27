@@ -1,0 +1,100 @@
+content/03-architecture/01-ADRs/ADR-015-RFC3161-second-time-anchor.md
+  h_10c93bba641ef0 1
+content/03-architecture/01-ADRs/ADR-001-bitcoin-blockchain-time-anchor.md
+  h_10c93bba641ef0 1-62
+content/03-architecture/01-ADRs/ADR-020-opentimestamps-anchoring.md
+  h_10c93bba641ef0 1
+README.md
+  s_a644500730bd65::t_cfa82ce760dfa3 33-34
+content/index.md
+  s_a644500730bd65::t_575f6304563c8f 24-26
+manual.config.json
+  s_a644500730bd65::t_f1d81ee61aba54 3-5
+tools/build.mjs
+  s_a644500730bd65::t_7595666e97ed2b 214,221-224,229-232,236
+tools/theme/AuthenticMemory_Logo.svg
+  s_a644500730bd65::t_4f209c687cf512 1-56
+tools/theme/AuthenticMemory_Logo_white.svg
+  s_a644500730bd65::t_19cb5ab4ce7158 1-54
+tools/theme/app.js
+  s_a644500730bd65::t_13b790d765d7ae 8-15,32-35,37-54,57-67
+tools/theme/style.css
+  s_a644500730bd65::t_586f5b2820ef08 16-27,77-84,158-169
+docs/architecture/ADRs/ADR-001-bitcoin-blockchain-time-anchor.html
+  h_10c93bba641ef0 6,8,15-18,23-26,30-31,36-38,91
+docs/architecture/ADRs/ADR-015-RFC3161-second-time-anchor.html
+  h_10c93bba641ef0 6,8,15-18,23-26,30-31,36,48
+docs/architecture/ADRs/ADR-020-opentimestamps-anchoring.html
+  h_10c93bba641ef0 6,8,15-18,23-26,30-31,36,82
+docs/architecture/ADRs/ADR-030-sha256-file-fingerprint.html
+  h_10c93bba641ef0 8,15-18,23-26,30-31,87
+docs/architecture/ADRs/index.html
+  h_10c93bba641ef0 8,15-18,23-26,30-31,39
+docs/architecture/component-model.html
+  h_10c93bba641ef0 8,15-18,23-26,30-31
+docs/architecture/data-model.html
+  h_10c93bba641ef0 8,15-18,23-26,30-31
+docs/architecture/index.html
+  h_10c93bba641ef0 8,15-18,23-26,30-31
+docs/assets/AuthenticMemory_Logo.svg
+  h_10c93bba641ef0 1-56
+docs/assets/AuthenticMemory_Logo_white.svg
+  h_10c93bba641ef0 1-54
+docs/assets/app.js
+  h_10c93bba641ef0 8-15,32-35,37-54,57-67
+docs/assets/search-index.js
+  h_10c93bba641ef0 1
+docs/assets/style.css
+  h_10c93bba641ef0 16-27,77-84,158-169
+docs/getting-started/configuration.html
+  h_10c93bba641ef0 8,15-18,23-26,30-31
+docs/getting-started/first-steps.html
+  h_10c93bba641ef0 8,15-18,23-26,30-31
+docs/getting-started/index.html
+  h_10c93bba641ef0 8,15-18,23-26,30-31
+docs/getting-started/installation.html
+  h_10c93bba641ef0 8,15-18,23-26,30-31
+docs/guides/authentication.html
+  h_10c93bba641ef0 8,15-18,23-26,30-31
+docs/guides/data-model.html
+  h_10c93bba641ef0 8,15-18,23-26,30-31
+docs/guides/deployment/index.html
+  h_10c93bba641ef0 8,15-18,23-26,30-31
+docs/guides/deployment/production.html
+  h_10c93bba641ef0 8,15-18,23-26,30-31
+docs/guides/deployment/staging.html
+  h_10c93bba641ef0 8,15-18,23-26,30-31
+docs/guides/index.html
+  h_10c93bba641ef0 8,15-18,23-26,30-31
+docs/index.html
+  h_10c93bba641ef0 8,15-18,23-26,30-31,68-70
+docs/reference/api.html
+  h_10c93bba641ef0 8,15-18,23-26,30-31
+docs/reference/cli.html
+  h_10c93bba641ef0 8,15-18,23-26,30-31
+docs/reference/glossary.html
+  h_10c93bba641ef0 8,15-18,23-26,30-31
+docs/reference/index.html
+  h_10c93bba641ef0 8,15-18,23-26,30-31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "43c032f57c3437c56ea3be9213df0c12ee9a9680",
+  "prompts": {},
+  "humans": {
+    "h_10c93bba641ef0": {
+      "author": "Peter Van Garderen <vangarderen.peter@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_a644500730bd65": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b31df9a9-70be-4120-b96a-e8948fcfc928",
+        "model": "unknown"
+      },
+      "human_author": "Peter Van Garderen <vangarderen.peter@gmail.com>"
+    }
+  }
+}
