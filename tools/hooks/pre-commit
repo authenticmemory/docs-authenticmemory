@@ -1,0 +1,13 @@
+#!/bin/sh
+# Rebuilds the manual on every commit so docs/index.md (the table of contents)
+# always matches the docs tree. Enabled by `npm install` (core.hooksPath).
+set -e
+cd "$(git rev-parse --show-toplevel)"
+
+if [ ! -d node_modules ]; then
+  echo "pre-commit: run 'npm install' first so the manual can be built." >&2
+  exit 1
+fi
+
+node tools/build.mjs
+git add docs/index.md
