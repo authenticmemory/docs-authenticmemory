@@ -1,0 +1,72 @@
+content/02-decisions/01-anchoring/ADR-015-rfc-3161-time-anchor.md
+  h_10c93bba641ef0 1-2,4,6,12-13,16-20,22-26,30,32-38,40,42,44-51,55-61,65-113
+docs/architecture/index.html
+  h_10c93bba641ef0 35
+docs/architecture/view1.html
+  h_10c93bba641ef0 35
+docs/architecture/view2.html
+  h_10c93bba641ef0 35
+docs/assets/search-index.js
+  h_10c93bba641ef0 1
+docs/decisions/anchoring/ADR-010-bitcoin-blockchain-time-anchor.html
+  h_10c93bba641ef0 35,94
+docs/decisions/anchoring/ADR-015-rfc-3161-time-anchor.html
+  h_10c93bba641ef0 6,35,39,41-44,47,49-58,60-70,72-81,83-91,93-142
+docs/decisions/anchoring/ADR-020-opentimestamps-anchor.html
+  h_10c93bba641ef0 35,87
+docs/decisions/anchoring/index.html
+  h_10c93bba641ef0 35
+docs/decisions/cryptography/index.html
+  h_10c93bba641ef0 35,44
+docs/decisions/index.html
+  h_10c93bba641ef0 35
+docs/decisions/proof-record/index.html
+  h_10c93bba641ef0 35
+docs/decisions/tech-stack/index.html
+  h_10c93bba641ef0 35
+docs/index.html
+  h_10c93bba641ef0 35
+docs/references/citations/index.html
+  h_10c93bba641ef0 35
+docs/references/glossary/index.html
+  h_10c93bba641ef0 35
+docs/requirements/data/index.html
+  h_10c93bba641ef0 35
+docs/requirements/functional/index.html
+  h_10c93bba641ef0 35
+docs/requirements/index.html
+  h_10c93bba641ef0 35
+docs/requirements/quality/index.html
+  h_10c93bba641ef0 35
+docs/requirements/quality/performance.html
+  h_10c93bba641ef0 35
+docs/requirements/quality/scalability.html
+  h_10c93bba641ef0 35
+docs/requirements/quality/security.html
+  h_10c93bba641ef0 35
+docs/requirements/standards/index.html
+  h_10c93bba641ef0 35
+docs/requirements/theory/index.html
+  h_10c93bba641ef0 35
+docs/requirements/user/index.html
+  h_10c93bba641ef0 35
+docs/software/gami-app/index.html
+  h_10c93bba641ef0 35
+docs/software/gami-hash/index.html
+  h_10c93bba641ef0 35
+docs/software/gami-verify/index.html
+  h_10c93bba641ef0 35
+docs/software/index.html
+  h_10c93bba641ef0 35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9588e2d4ae14f98b874068409b4cd531edf19daf",
+  "prompts": {},
+  "humans": {
+    "h_10c93bba641ef0": {
+      "author": "Peter Van Garderen <vangarderen.peter@gmail.com>"
+    }
+  }
+}
