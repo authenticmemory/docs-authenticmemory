@@ -1,0 +1,151 @@
+content/01-requirements/01-standards/index.md
+  h_10c93bba641ef0 3
+content/03-architecture/index.md
+  h_10c93bba641ef0 3
+content/01-requirements/02-theory/index.md
+  h_10c93bba641ef0 2-5
+  h_10c93bba641ef0 1
+content/03-architecture/architecture.md
+  s_25c60dd644fe7f::t_68de021fe830b0 1-1197
+content/03-architecture/system-architecture.md
+  s_25c60dd644fe7f::t_2deefa9eb38e60 11-12,19-27,49,52-53,56,69,71-72,74,119,139,177-180,190-192,197,202,207,211-213,219,249,273,275,281-282,286,290-293,298-304,314,316,321-324,326,330-332,342-346,352-354,357,362,365-367,377,384-388,390,401,407,409,440-441,450-451,466-469,503,583,603,607-610,615,624-625,627,641-644,654,661,665,668-669,671,674-675,685,723,727,729-731,735-743,750-751,753,769,797,809-812,822,848,855-858,867,881-884,903,908,910,935-938,943,970,982,1034-1035,1040,1046,1048-1049,1069,1073-1074,1076-1077,1079-1080,1083,1100-1109,1112,1122,1160-1163,1169,1175,1180
+content/03-architecture/assets/architecture/fig-01a-boundaries.svg
+  h_10c93bba641ef0 1-35
+content/03-architecture/assets/architecture/fig-02a-function-coverage.svg
+  h_10c93bba641ef0 1-75
+content/03-architecture/assets/architecture/fig-02b-operating-paths.svg
+  h_10c93bba641ef0 1-43
+content/03-architecture/assets/architecture/fig-03a-what-each-layer-covers.svg
+  h_10c93bba641ef0 1-22
+content/03-architecture/assets/architecture/fig-04a-vocabulary-layers.svg
+  h_10c93bba641ef0 1-30
+content/03-architecture/assets/architecture/fig-04b-what-a-record-proves.svg
+  h_10c93bba641ef0 1-42
+content/03-architecture/assets/architecture/fig-05a-one-durable-copy.svg
+  h_10c93bba641ef0 1-30
+content/03-architecture/assets/architecture/fig-05b-two-deployment-stories.svg
+  h_10c93bba641ef0 1-33
+content/03-architecture/assets/architecture/fig-06a-two-authentications.svg
+  h_10c93bba641ef0 1-31
+content/03-architecture/assets/architecture/fig-07a-six-checks.svg
+  h_10c93bba641ef0 1-47
+content/03-architecture/assets/architecture/fig-07b-four-links-of-trust.svg
+  h_10c93bba641ef0 1-34
+content/03-architecture/assets/architecture/fig-08a-record-states.svg
+  h_10c93bba641ef0 1-46
+content/03-architecture/assets/architecture/fig-09a-committed-changes.svg
+  h_10c93bba641ef0 1-35
+docs/architecture/architecture.html
+  h_10c93bba641ef0 35,41-49,51,56,70-71,76,78,83,89,94-95,101,106-107,112-113,119,163,166-167,170,202,214,220,232,345,365,423-424,430-432,437,442,447,451-453,459,489,511-512,544,552,584,607-608,623,629,635,640-641,654,656,664-667,671,684,689,694,731-732,735-736,739,743,747,763,770,774,788,814,828-830,833,838,848,853-857,859,870,876,878,909-910,917-918,959-960,992,1072,1121,1127-1128,1141,1173-1174,1176,1217-1218,1224,1231,1235,1238-1239,1241,1244-1245,1255,1291,1303-1304,1313,1318,1324,1338-1342,1349-1350,1352,1365,1393,1402-1403,1411,1437,1441-1442,1455,1503-1504,1526,1531,1533,1555-1556,1560,1587,1599,1717-1718,1722-1723,1747-1748,1778,1787,1793,1857,1881,1887,1902,1905,1917,1926,1944,1975,1980,1985,1990,1994-1995,2000,2005,2010,2015,2019,2034-2035,2064,2190-2191,2206,2230,2247,2252
+docs/architecture/assets/architecture/fig-01a-boundaries.svg
+  h_10c93bba641ef0 1-35
+docs/architecture/assets/architecture/fig-02a-function-coverage.svg
+  h_10c93bba641ef0 1-75
+docs/architecture/assets/architecture/fig-02b-operating-paths.svg
+  h_10c93bba641ef0 1-43
+docs/architecture/assets/architecture/fig-03a-what-each-layer-covers.svg
+  h_10c93bba641ef0 1-22
+docs/architecture/assets/architecture/fig-04a-vocabulary-layers.svg
+  h_10c93bba641ef0 1-30
+docs/architecture/assets/architecture/fig-04b-what-a-record-proves.svg
+  h_10c93bba641ef0 1-42
+docs/architecture/assets/architecture/fig-05a-one-durable-copy.svg
+  h_10c93bba641ef0 1-30
+docs/architecture/assets/architecture/fig-05b-two-deployment-stories.svg
+  h_10c93bba641ef0 1-33
+docs/architecture/assets/architecture/fig-06a-two-authentications.svg
+  h_10c93bba641ef0 1-31
+docs/architecture/assets/architecture/fig-07a-six-checks.svg
+  h_10c93bba641ef0 1-47
+docs/architecture/assets/architecture/fig-07b-four-links-of-trust.svg
+  h_10c93bba641ef0 1-34
+docs/architecture/assets/architecture/fig-08a-record-states.svg
+  h_10c93bba641ef0 1-46
+docs/architecture/assets/architecture/fig-09a-committed-changes.svg
+  h_10c93bba641ef0 1-35
+docs/architecture/index.html
+  h_10c93bba641ef0 35
+docs/architecture/system-architecture.html
+  h_10c93bba641ef0 1-2248
+docs/assets/search-index.js
+  h_10c93bba641ef0 1
+docs/decisions/anchoring/ADR-010-bitcoin-blockchain-time-anchor.html
+  h_10c93bba641ef0 35
+docs/decisions/anchoring/ADR-020-opentimestamps-time-anchor.html
+  h_10c93bba641ef0 35
+docs/decisions/anchoring/ADR-030-rfc-3161-time-anchor.html
+  h_10c93bba641ef0 35
+docs/decisions/anchoring/index.html
+  h_10c93bba641ef0 35
+docs/decisions/cryptography/ADR-100-sha256-file-fingerprint.html
+  h_10c93bba641ef0 35
+docs/decisions/cryptography/ADR-110-ed25519-institutional-signatures.html
+  h_10c93bba641ef0 35
+docs/decisions/cryptography/ADR-120-hardware-key-webauthn-signing.html
+  h_10c93bba641ef0 35
+docs/decisions/cryptography/ADR-130-did-web-institutional-identity.html
+  h_10c93bba641ef0 35
+docs/decisions/cryptography/index.html
+  h_10c93bba641ef0 35
+docs/decisions/index.html
+  h_10c93bba641ef0 35
+docs/decisions/proof-record/index.html
+  h_10c93bba641ef0 35
+docs/decisions/tech-stack/index.html
+  h_10c93bba641ef0 35
+docs/index.html
+  h_10c93bba641ef0 35
+docs/references/citations/index.html
+  h_10c93bba641ef0 35
+docs/references/glossary/index.html
+  h_10c93bba641ef0 35
+docs/requirements/data/index.html
+  h_10c93bba641ef0 35
+docs/requirements/functional/index.html
+  h_10c93bba641ef0 35
+docs/requirements/index.html
+  h_10c93bba641ef0 35
+docs/requirements/quality/index.html
+  h_10c93bba641ef0 35
+docs/requirements/quality/performance.html
+  h_10c93bba641ef0 35
+docs/requirements/quality/scalability.html
+  h_10c93bba641ef0 35
+docs/requirements/quality/security.html
+  h_10c93bba641ef0 35
+docs/requirements/standards/index.html
+  h_10c93bba641ef0 35,42
+docs/requirements/theory/index.html
+  h_10c93bba641ef0 35,42-43
+docs/requirements/user/index.html
+  h_10c93bba641ef0 35
+docs/software/gami-app/index.html
+  h_10c93bba641ef0 35
+docs/software/gami-hash/index.html
+  h_10c93bba641ef0 35
+docs/software/gami-verify/index.html
+  h_10c93bba641ef0 35
+docs/software/index.html
+  h_10c93bba641ef0 35,44
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "320cee22254083b2af8bbf3f78aa1d05e6c4ca18",
+  "prompts": {},
+  "humans": {
+    "h_10c93bba641ef0": {
+      "author": "Peter Van Garderen <vangarderen.peter@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_25c60dd644fe7f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9e91c5e4-c5c7-43ab-8b16-289782cc0407",
+        "model": "unknown"
+      },
+      "human_author": "Peter Van Garderen <vangarderen.peter@gmail.com>"
+    }
+  }
+}
