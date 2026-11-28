@@ -1,0 +1,18 @@
+content/02-decisions/01-anchoring/ADR-030-rfc-3161-time-anchor.md
+  h_10c93bba641ef0 6
+docs/assets/search-index.js
+  h_10c93bba641ef0 1
+docs/decisions/anchoring/ADR-030-rfc-3161-time-anchor.html
+  h_10c93bba641ef0 44
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "863d4d9aeae0d84df08b1a582ebe14592612c2e0",
+  "prompts": {},
+  "humans": {
+    "h_10c93bba641ef0": {
+      "author": "Peter Van Garderen <vangarderen.peter@gmail.com>"
+    }
+  }
+}
