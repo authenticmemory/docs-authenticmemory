@@ -11,9 +11,9 @@ Proposed
 
 ## Context / Requirement Reference
 
-[ADR-010](ADR-010-bitcoin-blockchain-time-anchor.md) makes the Bitcoin blockchain, reached through OpenTimestamps calendars ([ADR-020](ADR-020-opentimestamps-anchoring.md)), the only time anchor. Every live proof therefore shares one failure mode. 
+The Bitcoin blockchain, reached through OpenTimestamps calendars is the only time anchor for Authentic Memory. Every live proof therefore shares one failure mode. 
 
-The funder commitment is a second independent timestamping system in production by 31 December 2026: "Every batch goes to both, the verifier shows both."
+Authentic Memory has a funder commitment to deliver a second independent timestamping system where "every batch goes to both, the verifier shows both."
 
 The second anchor therefore has to:
 
@@ -81,7 +81,4 @@ Anchor every batch a second time with RFC 3161 time-stamp tokens through an eIDA
 - **Existing records:** records already issued can be time-stamped now, but the token proves existence only from the day it is made.
 - **A trusted third party enters the design:** the first principle of ADR-010 (timestamping on Bitcoin) is that no authority has to survive. This decision accepts an authority because it is additional to, and checkable against, the anchor that needs none.
 
-## Related Decisions / Notes
 
-- [ADR-010](ADR-010-bitcoin-blockchain-time-anchor.md): Bitcoin as the primary time anchor. Unchanged; this record adds to it.
-- [ADR-020](ADR-020-opentimestamps-anchoring.md): OpenTimestamps as the anchoring protocol. Unchanged.

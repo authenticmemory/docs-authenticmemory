@@ -46,6 +46,3 @@ Accepted
 - The Bitcoin chain stores only a Merkle root, so a lost OPR cannot be rebuilt from the blockchain. Institution-held copies and replication are essential (risk T-04).
 - The service depends on volunteer infrastructure it does not control (risk B-16).
 
-## Related Decisions / Notes
-
-- [ADR-010](ADR-010-bitcoin-blockchain-time-anchor.md): Bitcoin as time anchor.
