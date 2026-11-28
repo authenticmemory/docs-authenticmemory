@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" width="800" height="440" role="img" aria-labelledby="t d" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" stroke-linejoin="round" stroke-linecap="round">
+<title id="t">Nine Functions, Forty Sub-Functions</title>
+<desc id="d">Nine rows, one per function, each with one small square per sub-function: green for implemented, blue for partial, a dashed red outline for not in code. Totals at the right: 9 implemented, 20 partial, 11 not in code.</desc>
+<defs><marker id="ak" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#111111" stroke="none"/></marker></defs>
+<rect width="800" height="440" fill="#F2EFE6"/>
+<text x="40" y="42" font-size="15" font-weight="700" text-anchor="start" fill="#111111" letter-spacing="3">NINE FUNCTIONS, FORTY SUB-FUNCTIONS</text>
+<text x="760" y="42" font-size="12" font-weight="500" text-anchor="end" fill="#111111" letter-spacing="1.5">FIG. 2A</text>
+<line x1="40" y1="58" x2="760" y2="58" stroke="#111111" stroke-width="3" stroke-linecap="butt"/>
+<text x="52" y="99" font-size="11" font-weight="700" text-anchor="middle" fill="#111111" letter-spacing="1.5">1</text>
+<text x="74" y="99" font-size="10.5" font-weight="500" text-anchor="start" fill="#111111" letter-spacing="1.5">ADMIT AND REGISTER</text>
+<rect x="300" y="84" width="20" height="20" rx="3" fill="#2E7D4F" stroke="#111111" stroke-width="2"/>
+<rect x="328" y="84" width="20" height="20" rx="3" fill="#1F4E9C" stroke="#111111" stroke-width="2"/>
+<rect x="356" y="84" width="20" height="20" rx="3" fill="none" stroke="#D7261E" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="52" y="130" font-size="11" font-weight="700" text-anchor="middle" fill="#111111" letter-spacing="1.5">2</text>
+<text x="74" y="130" font-size="10.5" font-weight="500" text-anchor="start" fill="#111111" letter-spacing="1.5">ESTABLISH IDENTITY</text>
+<rect x="300" y="115" width="20" height="20" rx="3" fill="#2E7D4F" stroke="#111111" stroke-width="2"/>
+<rect x="328" y="115" width="20" height="20" rx="3" fill="#2E7D4F" stroke="#111111" stroke-width="2"/>
+<rect x="356" y="115" width="20" height="20" rx="3" fill="#2E7D4F" stroke="#111111" stroke-width="2"/>
+<rect x="384" y="115" width="20" height="20" rx="3" fill="#1F4E9C" stroke="#111111" stroke-width="2"/>
+<rect x="412" y="115" width="20" height="20" rx="3" fill="#1F4E9C" stroke="#111111" stroke-width="2"/>
+<text x="52" y="161" font-size="11" font-weight="700" text-anchor="middle" fill="#111111" letter-spacing="1.5">3</text>
+<text x="74" y="161" font-size="10.5" font-weight="500" text-anchor="start" fill="#111111" letter-spacing="1.5">PREPARE COLLECTIONS</text>
+<rect x="300" y="146" width="20" height="20" rx="3" fill="#2E7D4F" stroke="#111111" stroke-width="2"/>
+<rect x="328" y="146" width="20" height="20" rx="3" fill="#1F4E9C" stroke="#111111" stroke-width="2"/>
+<rect x="356" y="146" width="20" height="20" rx="3" fill="#1F4E9C" stroke="#111111" stroke-width="2"/>
+<rect x="384" y="146" width="20" height="20" rx="3" fill="none" stroke="#D7261E" stroke-width="2" stroke-dasharray="5 4"/>
+<rect x="412" y="146" width="20" height="20" rx="3" fill="none" stroke="#D7261E" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="52" y="192" font-size="11" font-weight="700" text-anchor="middle" fill="#111111" letter-spacing="1.5">4</text>
+<text x="74" y="192" font-size="10.5" font-weight="500" text-anchor="start" fill="#111111" letter-spacing="1.5">CREATE RECORDS</text>
+<rect x="300" y="177" width="20" height="20" rx="3" fill="#2E7D4F" stroke="#111111" stroke-width="2"/>
+<rect x="328" y="177" width="20" height="20" rx="3" fill="#2E7D4F" stroke="#111111" stroke-width="2"/>
+<rect x="356" y="177" width="20" height="20" rx="3" fill="#1F4E9C" stroke="#111111" stroke-width="2"/>
+<rect x="384" y="177" width="20" height="20" rx="3" fill="#1F4E9C" stroke="#111111" stroke-width="2"/>
+<rect x="412" y="177" width="20" height="20" rx="3" fill="#1F4E9C" stroke="#111111" stroke-width="2"/>
+<text x="52" y="223" font-size="11" font-weight="700" text-anchor="middle" fill="#111111" letter-spacing="1.5">5</text>
+<text x="74" y="223" font-size="10.5" font-weight="500" text-anchor="start" fill="#111111" letter-spacing="1.5">SIGN</text>
+<rect x="300" y="208" width="20" height="20" rx="3" fill="#2E7D4F" stroke="#111111" stroke-width="2"/>
+<rect x="328" y="208" width="20" height="20" rx="3" fill="#1F4E9C" stroke="#111111" stroke-width="2"/>
+<rect x="356" y="208" width="20" height="20" rx="3" fill="none" stroke="#D7261E" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="52" y="254" font-size="11" font-weight="700" text-anchor="middle" fill="#111111" letter-spacing="1.5">6</text>
+<text x="74" y="254" font-size="10.5" font-weight="500" text-anchor="start" fill="#111111" letter-spacing="1.5">TIMESTAMP</text>
+<rect x="300" y="239" width="20" height="20" rx="3" fill="#1F4E9C" stroke="#111111" stroke-width="2"/>
+<rect x="328" y="239" width="20" height="20" rx="3" fill="#1F4E9C" stroke="#111111" stroke-width="2"/>
+<rect x="356" y="239" width="20" height="20" rx="3" fill="none" stroke="#D7261E" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="52" y="285" font-size="11" font-weight="700" text-anchor="middle" fill="#111111" letter-spacing="1.5">7</text>
+<text x="74" y="285" font-size="10.5" font-weight="500" text-anchor="start" fill="#111111" letter-spacing="1.5">PUBLISH AND RETAIN</text>
+<rect x="300" y="270" width="20" height="20" rx="3" fill="#1F4E9C" stroke="#111111" stroke-width="2"/>
+<rect x="328" y="270" width="20" height="20" rx="3" fill="#1F4E9C" stroke="#111111" stroke-width="2"/>
+<rect x="356" y="270" width="20" height="20" rx="3" fill="#1F4E9C" stroke="#111111" stroke-width="2"/>
+<rect x="384" y="270" width="20" height="20" rx="3" fill="none" stroke="#D7261E" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="52" y="316" font-size="11" font-weight="700" text-anchor="middle" fill="#111111" letter-spacing="1.5">8</text>
+<text x="74" y="316" font-size="10.5" font-weight="500" text-anchor="start" fill="#111111" letter-spacing="1.5">VERIFY</text>
+<rect x="300" y="301" width="20" height="20" rx="3" fill="#2E7D4F" stroke="#111111" stroke-width="2"/>
+<rect x="328" y="301" width="20" height="20" rx="3" fill="#1F4E9C" stroke="#111111" stroke-width="2"/>
+<rect x="356" y="301" width="20" height="20" rx="3" fill="#1F4E9C" stroke="#111111" stroke-width="2"/>
+<rect x="384" y="301" width="20" height="20" rx="3" fill="#1F4E9C" stroke="#111111" stroke-width="2"/>
+<text x="52" y="347" font-size="11" font-weight="700" text-anchor="middle" fill="#111111" letter-spacing="1.5">9</text>
+<text x="74" y="347" font-size="10.5" font-weight="500" text-anchor="start" fill="#111111" letter-spacing="1.5">MAINTAIN OVER TIME</text>
+<rect x="300" y="332" width="20" height="20" rx="3" fill="#1F4E9C" stroke="#111111" stroke-width="2"/>
+<rect x="328" y="332" width="20" height="20" rx="3" fill="#1F4E9C" stroke="#111111" stroke-width="2"/>
+<rect x="356" y="332" width="20" height="20" rx="3" fill="#1F4E9C" stroke="#111111" stroke-width="2"/>
+<rect x="384" y="332" width="20" height="20" rx="3" fill="none" stroke="#D7261E" stroke-width="2" stroke-dasharray="5 4"/>
+<rect x="412" y="332" width="20" height="20" rx="3" fill="none" stroke="#D7261E" stroke-width="2" stroke-dasharray="5 4"/>
+<rect x="440" y="332" width="20" height="20" rx="3" fill="none" stroke="#D7261E" stroke-width="2" stroke-dasharray="5 4"/>
+<rect x="468" y="332" width="20" height="20" rx="3" fill="none" stroke="#D7261E" stroke-width="2" stroke-dasharray="5 4"/>
+<rect x="496" y="332" width="20" height="20" rx="3" fill="none" stroke="#D7261E" stroke-width="2" stroke-dasharray="5 4"/>
+<rect x="590" y="150" width="24" height="24" rx="3" fill="#2E7D4F" stroke="#111111" stroke-width="2"/>
+<text x="628" y="167" font-size="11.5" font-weight="700" text-anchor="start" fill="#111111" letter-spacing="1.5">9  IMPLEMENTED</text>
+<rect x="590" y="200" width="24" height="24" rx="3" fill="#1F4E9C" stroke="#111111" stroke-width="2"/>
+<text x="628" y="217" font-size="11.5" font-weight="700" text-anchor="start" fill="#111111" letter-spacing="1.5">20  PARTIAL</text>
+<rect x="590" y="250" width="24" height="24" rx="3" fill="none" stroke="#D7261E" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="628" y="267" font-size="11.5" font-weight="700" text-anchor="start" fill="#D7261E" letter-spacing="1.5">11  NOT IN CODE</text>
+<line x1="40" y1="390" x2="760" y2="390" stroke="#111111" stroke-width="1" stroke-linecap="butt"/>
+<text x="40" y="416" font-size="13" font-weight="400" text-anchor="start" fill="#111111" letter-spacing="0.3">Function 9, keeping records valid over time, is the least built.</text>
+</svg>

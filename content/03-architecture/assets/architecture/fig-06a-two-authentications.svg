@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400" role="img" aria-labelledby="t d" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" stroke-linejoin="round" stroke-linecap="round">
+<title id="t">Two Things Are Authenticated</title>
+<desc id="d">Left: a person signs in with a passkey or magic link and receives a session. Right: the institution's hardware key, with PIN and touch, produces a signature over the batch root. A dashed red line keeps the two apart.</desc>
+<defs><marker id="ak" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#111111" stroke="none"/></marker></defs>
+<rect width="800" height="400" fill="#F2EFE6"/>
+<text x="40" y="42" font-size="15" font-weight="700" text-anchor="start" fill="#111111" letter-spacing="3">TWO THINGS ARE AUTHENTICATED</text>
+<text x="760" y="42" font-size="12" font-weight="500" text-anchor="end" fill="#111111" letter-spacing="1.5">FIG. 6A</text>
+<line x1="40" y1="58" x2="760" y2="58" stroke="#111111" stroke-width="3" stroke-linecap="butt"/>
+<text x="40" y="100" font-size="11" font-weight="700" text-anchor="start" fill="#111111" letter-spacing="1.5">THE PERSON SIGNS IN</text>
+<circle cx="90" cy="190" r="26" fill="#1F4E9C" stroke="#111111" stroke-width="4"/>
+<line x1="124" y1="190" x2="234" y2="190" stroke="#111111" stroke-width="4" marker-end="url(#ak)"/>
+<text x="180" y="176" font-size="10" font-weight="700" text-anchor="middle" fill="#111111" letter-spacing="1.5">PASSKEY</text>
+<text x="180" y="210" font-size="10.5" font-weight="400" text-anchor="middle" fill="#111111" letter-spacing="0.3">or magic link</text>
+<rect x="240" y="160" width="120" height="60" rx="6" fill="#F2EFE6" stroke="#111111" stroke-width="4"/>
+<text x="300" y="187" font-size="10.5" font-weight="700" text-anchor="middle" fill="#111111" letter-spacing="1.5">SESSION</text>
+<text x="300" y="204" font-size="10.5" font-weight="400" text-anchor="middle" fill="#111111" letter-spacing="0.3">with a role</text>
+<text x="40" y="268" font-size="11" font-weight="400" text-anchor="start" fill="#111111" letter-spacing="0.3">Opens the portal. Cannot sign a batch.</text>
+<line x1="400" y1="84" x2="400" y2="296" stroke="#D7261E" stroke-width="4" stroke-dasharray="8 7"/>
+<text x="400" y="324" font-size="10.5" font-weight="700" text-anchor="middle" fill="#D7261E" letter-spacing="1.5">A STOLEN SESSION CANNOT SIGN</text>
+<text x="430" y="100" font-size="11" font-weight="700" text-anchor="start" fill="#111111" letter-spacing="1.5">THE INSTITUTION SIGNS</text>
+<rect x="440" y="164" width="52" height="52" rx="6" fill="#F4D35E" stroke="#111111" stroke-width="3"/>
+<text x="466" y="238" font-size="9.5" font-weight="500" text-anchor="middle" fill="#111111" letter-spacing="1.2">HARDWARE KEY</text>
+<line x1="500" y1="190" x2="614" y2="190" stroke="#111111" stroke-width="4" marker-end="url(#ak)"/>
+<text x="557" y="176" font-size="10" font-weight="700" text-anchor="middle" fill="#111111" letter-spacing="1.5">PIN + TOUCH</text>
+<rect x="620" y="160" width="130" height="60" rx="6" fill="#1F4E9C" stroke="#111111" stroke-width="4"/>
+<text x="685" y="187" font-size="10.5" font-weight="700" text-anchor="middle" fill="#F2EFE6" letter-spacing="1.5">SIGNATURE</text>
+<text x="685" y="204" font-size="10" font-weight="400" text-anchor="middle" fill="#F2EFE6" letter-spacing="0.3">over the batch root</text>
+<text x="540" y="268" font-size="11" font-weight="400" text-anchor="start" fill="#111111" letter-spacing="0.3">The key never leaves the hardware.</text>
+<line x1="40" y1="350" x2="760" y2="350" stroke="#111111" stroke-width="1" stroke-linecap="butt"/>
+<text x="40" y="376" font-size="13" font-weight="400" text-anchor="start" fill="#111111" letter-spacing="0.3">Signing in and signing a batch are separate acts with separate credentials.</text>
+</svg>

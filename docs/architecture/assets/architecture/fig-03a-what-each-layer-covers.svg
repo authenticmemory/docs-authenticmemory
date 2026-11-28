@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400" role="img" aria-labelledby="t d" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" stroke-linejoin="round" stroke-linecap="round">
+<title id="t">What Each Layer Covers</title>
+<desc id="d">Three nested boxes. The innermost is the signed form of the record. The signature surrounds it. The anchors surround both and can be added to without signing again.</desc>
+<defs><marker id="ak" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#111111" stroke="none"/></marker></defs>
+<rect width="800" height="400" fill="#F2EFE6"/>
+<text x="40" y="42" font-size="15" font-weight="700" text-anchor="start" fill="#111111" letter-spacing="3">WHAT EACH LAYER COVERS</text>
+<text x="760" y="42" font-size="12" font-weight="500" text-anchor="end" fill="#111111" letter-spacing="1.5">FIG. 3A</text>
+<line x1="40" y1="58" x2="760" y2="58" stroke="#111111" stroke-width="3" stroke-linecap="butt"/>
+<rect x="40" y="84" width="720" height="250" rx="6" fill="#2E7D4F" stroke="#111111" stroke-width="4"/>
+<text x="58" y="109" font-size="12" font-weight="700" text-anchor="start" fill="#F2EFE6" letter-spacing="1.5">ANCHORS</text>
+<text x="140" y="109" font-size="11" font-weight="400" text-anchor="start" fill="#F2EFE6" letter-spacing="0.3">date the stamping root. More can be added without re-signing.</text>
+<rect x="80" y="126" width="640" height="190" rx="6" fill="#1F4E9C" stroke="#111111" stroke-width="4"/>
+<text x="98" y="151" font-size="12" font-weight="700" text-anchor="start" fill="#F2EFE6" letter-spacing="1.5">SIGNATURE</text>
+<text x="198" y="151" font-size="11" font-weight="400" text-anchor="start" fill="#F2EFE6" letter-spacing="0.3">covers the signing root. It does not cover the anchors.</text>
+<rect x="120" y="168" width="560" height="130" rx="6" fill="#F2EFE6" stroke="#111111" stroke-width="4"/>
+<text x="138" y="196" font-size="12" font-weight="700" text-anchor="start" fill="#111111" letter-spacing="1.5">SIGNED FORM</text>
+<text x="138" y="220" font-size="11" font-weight="400" text-anchor="start" fill="#111111" letter-spacing="0.3">The record without its signature, batch fields and timestamp,</text>
+<text x="138" y="237" font-size="11" font-weight="400" text-anchor="start" fill="#111111" letter-spacing="0.3">serialised with JCS and hashed with SHA-256.</text>
+<text x="138" y="270" font-size="11" font-weight="400" text-anchor="start" fill="#111111" letter-spacing="0.3">Never changed once signed.</text>
+<line x1="40" y1="350" x2="760" y2="350" stroke="#111111" stroke-width="1" stroke-linecap="butt"/>
+<text x="40" y="376" font-size="13" font-weight="400" text-anchor="start" fill="#111111" letter-spacing="0.3">The stamping tree covers the signature. The signature does not cover the anchors.</text>
+</svg>

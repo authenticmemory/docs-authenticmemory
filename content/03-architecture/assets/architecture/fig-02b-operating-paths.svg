@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400" role="img" aria-labelledby="t d" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" stroke-linejoin="round" stroke-linecap="round">
+<title id="t">Three Operating Paths</title>
+<desc id="d">A grid of three rows, managed, assisted and sovereign, and four columns, prepare, build, sign and anchor. A blue disc means the institution does the step and a black disc means Authentic Memory does it. In the sovereign row every disc is blue with a dashed contour, because that path is not yet released.</desc>
+<defs><marker id="ak" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#111111" stroke="none"/></marker></defs>
+<rect width="800" height="400" fill="#F2EFE6"/>
+<text x="40" y="42" font-size="15" font-weight="700" text-anchor="start" fill="#111111" letter-spacing="3">THREE OPERATING PATHS</text>
+<text x="760" y="42" font-size="12" font-weight="500" text-anchor="end" fill="#111111" letter-spacing="1.5">FIG. 2B</text>
+<line x1="40" y1="58" x2="760" y2="58" stroke="#111111" stroke-width="3" stroke-linecap="butt"/>
+<text x="330" y="100" font-size="10.5" font-weight="700" text-anchor="middle" fill="#111111" letter-spacing="1.5">PREPARE</text>
+<text x="440" y="100" font-size="10.5" font-weight="700" text-anchor="middle" fill="#111111" letter-spacing="1.5">BUILD</text>
+<text x="550" y="100" font-size="10.5" font-weight="700" text-anchor="middle" fill="#111111" letter-spacing="1.5">SIGN</text>
+<text x="660" y="100" font-size="10.5" font-weight="700" text-anchor="middle" fill="#111111" letter-spacing="1.5">ANCHOR</text>
+<text x="40" y="148" font-size="12" font-weight="700" text-anchor="start" fill="#111111" letter-spacing="1.5">MANAGED</text>
+<text x="40" y="165" font-size="10.5" font-weight="400" text-anchor="start" fill="#111111" letter-spacing="0.3">built</text>
+<line x1="330" y1="150" x2="660" y2="150" stroke="#111111" stroke-width="1"/>
+<circle cx="330" cy="150" r="18" fill="#1F4E9C" stroke="#111111" stroke-width="4"/>
+<circle cx="440" cy="150" r="18" fill="#111111" stroke="#111111" stroke-width="4"/>
+<circle cx="550" cy="150" r="18" fill="#1F4E9C" stroke="#111111" stroke-width="4"/>
+<circle cx="660" cy="150" r="18" fill="#111111" stroke="#111111" stroke-width="4"/>
+<text x="40" y="213" font-size="12" font-weight="700" text-anchor="start" fill="#111111" letter-spacing="1.5">ASSISTED</text>
+<text x="40" y="230" font-size="10.5" font-weight="400" text-anchor="start" fill="#111111" letter-spacing="0.3">built; staff help to prepare</text>
+<line x1="330" y1="215" x2="660" y2="215" stroke="#111111" stroke-width="1"/>
+<circle cx="330" cy="215" r="18" fill="#1F4E9C" stroke="#111111" stroke-width="4"/>
+<circle cx="440" cy="215" r="18" fill="#111111" stroke="#111111" stroke-width="4"/>
+<circle cx="550" cy="215" r="18" fill="#1F4E9C" stroke="#111111" stroke-width="4"/>
+<circle cx="660" cy="215" r="18" fill="#111111" stroke="#111111" stroke-width="4"/>
+<text x="40" y="278" font-size="12" font-weight="700" text-anchor="start" fill="#111111" letter-spacing="1.5">SOVEREIGN</text>
+<text x="40" y="295" font-size="10.5" font-weight="400" text-anchor="start" fill="#111111" letter-spacing="0.3">in progress</text>
+<line x1="330" y1="280" x2="660" y2="280" stroke="#111111" stroke-width="1"/>
+<circle cx="330" cy="280" r="18" fill="#1F4E9C" stroke="#111111" stroke-width="4" stroke-dasharray="6 5"/>
+<circle cx="440" cy="280" r="18" fill="#1F4E9C" stroke="#111111" stroke-width="4" stroke-dasharray="6 5"/>
+<circle cx="550" cy="280" r="18" fill="#1F4E9C" stroke="#111111" stroke-width="4" stroke-dasharray="6 5"/>
+<circle cx="660" cy="280" r="18" fill="#1F4E9C" stroke="#111111" stroke-width="4" stroke-dasharray="6 5"/>
+<circle cx="362" cy="215" r="8" fill="#111111" stroke="#111111" stroke-width="0"/>
+<circle cx="48" cy="326" r="7" fill="#1F4E9C" stroke="#111111" stroke-width="2"/>
+<text x="64" y="330" font-size="9.5" font-weight="700" text-anchor="start" fill="#111111" letter-spacing="1.2">INSTITUTION</text>
+<circle cx="218" cy="326" r="7" fill="#111111" stroke="#111111" stroke-width="0"/>
+<text x="234" y="330" font-size="9.5" font-weight="700" text-anchor="start" fill="#111111" letter-spacing="1.2">AUTHENTIC MEMORY</text>
+<circle cx="448" cy="326" r="7" fill="#F2EFE6" stroke="#111111" stroke-width="2" stroke-dasharray="3 3"/>
+<text x="464" y="330" font-size="9.5" font-weight="700" text-anchor="start" fill="#111111" letter-spacing="1.2">DASHED: NOT YET RELEASED</text>
+<line x1="40" y1="350" x2="760" y2="350" stroke="#111111" stroke-width="1" stroke-linecap="butt"/>
+<text x="40" y="376" font-size="13" font-weight="400" text-anchor="start" fill="#111111" letter-spacing="0.3">The institution always signs. The paths differ in who prepares, builds and anchors.</text>
+</svg>

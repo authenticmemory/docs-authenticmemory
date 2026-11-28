@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400" role="img" aria-labelledby="t d" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" stroke-linejoin="round" stroke-linecap="round">
+<title id="t">Two Deployment Stories</title>
+<desc id="d">Left: the documented deployment, Caddy in front of docker-compose on one host. Right: what the deployment code shows, ArgoCD syncing Kustomize overlays for production and staging.</desc>
+<defs><marker id="ak" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#111111" stroke="none"/></marker></defs>
+<rect width="800" height="400" fill="#F2EFE6"/>
+<text x="40" y="42" font-size="15" font-weight="700" text-anchor="start" fill="#111111" letter-spacing="3">TWO DEPLOYMENT STORIES</text>
+<text x="760" y="42" font-size="12" font-weight="500" text-anchor="end" fill="#111111" letter-spacing="1.5">FIG. 5B</text>
+<line x1="40" y1="58" x2="760" y2="58" stroke="#111111" stroke-width="3" stroke-linecap="butt"/>
+<text x="40" y="100" font-size="11" font-weight="700" text-anchor="start" fill="#111111" letter-spacing="1.5">THE DOCUMENTS: ADR-017</text>
+<rect x="60" y="124" width="290" height="150" rx="6" fill="#F2EFE6" stroke="#111111" stroke-width="4"/>
+<text x="205" y="150" font-size="10.5" font-weight="700" text-anchor="middle" fill="#111111" letter-spacing="1.5">ONE HOST</text>
+<rect x="80" y="176" width="110" height="64" rx="6" fill="#1F4E9C" stroke="#111111" stroke-width="4"/>
+<text x="135" y="213" font-size="10.5" font-weight="700" text-anchor="middle" fill="#F2EFE6" letter-spacing="1.5">CADDY</text>
+<line x1="196" y1="208" x2="214" y2="208" stroke="#111111" stroke-width="3" marker-end="url(#ak)"/>
+<rect x="220" y="176" width="110" height="64" rx="6" fill="#1F4E9C" stroke="#111111" stroke-width="4"/>
+<text x="275" y="205" font-size="10" font-weight="700" text-anchor="middle" fill="#F2EFE6" letter-spacing="1.5">DOCKER</text>
+<text x="275" y="221" font-size="10" font-weight="700" text-anchor="middle" fill="#F2EFE6" letter-spacing="1.5">COMPOSE</text>
+<text x="40" y="306" font-size="11" font-weight="400" text-anchor="start" fill="#111111" letter-spacing="0.3">A single-host deployment behind a reverse proxy.</text>
+<line x1="400" y1="84" x2="400" y2="336" stroke="#111111" stroke-width="3"/>
+<text x="430" y="100" font-size="11" font-weight="700" text-anchor="start" fill="#111111" letter-spacing="1.5">THE CODE: GAMI-INFRA</text>
+<rect x="430" y="176" width="100" height="64" rx="6" fill="#2E7D4F" stroke="#111111" stroke-width="4"/>
+<text x="480" y="213" font-size="10.5" font-weight="700" text-anchor="middle" fill="#F2EFE6" letter-spacing="1.5">ARGOCD</text>
+<line x1="536" y1="208" x2="564" y2="208" stroke="#111111" stroke-width="3" marker-end="url(#ak)"/>
+<rect x="570" y="124" width="180" height="150" rx="6" fill="#F2EFE6" stroke="#111111" stroke-width="4"/>
+<text x="660" y="150" font-size="9.5" font-weight="700" text-anchor="middle" fill="#111111" letter-spacing="1.2">KUSTOMIZE OVERLAYS</text>
+<rect x="590" y="166" width="140" height="40" rx="6" fill="#1F4E9C" stroke="#111111" stroke-width="3"/>
+<text x="660" y="191" font-size="10" font-weight="700" text-anchor="middle" fill="#F2EFE6" letter-spacing="1.5">PRODUCTION</text>
+<rect x="590" y="218" width="140" height="40" rx="6" fill="#F2EFE6" stroke="#111111" stroke-width="3"/>
+<text x="660" y="243" font-size="10" font-weight="700" text-anchor="middle" fill="#111111" letter-spacing="1.5">STAGING</text>
+<text x="430" y="306" font-size="11" font-weight="400" text-anchor="start" fill="#111111" letter-spacing="0.3">Plus Terraform, Ansible and a PostgreSQL cluster.</text>
+<line x1="40" y1="350" x2="760" y2="350" stroke="#111111" stroke-width="1" stroke-linecap="butt"/>
+<text x="40" y="376" font-size="13" font-weight="400" text-anchor="start" fill="#111111" letter-spacing="0.3">The sources do not say which of the two serves production traffic today.</text>
+</svg>
