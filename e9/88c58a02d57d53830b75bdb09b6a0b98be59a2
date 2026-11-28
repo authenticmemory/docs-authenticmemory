@@ -1,0 +1,81 @@
+content/02-decisions/03-proof-record/index.md
+  h_10c93bba641ef0 1
+content/02-decisions/04-tech-stack/index.md
+  h_10c93bba641ef0 1
+content/02-decisions/01-anchoring/ADR-010-bitcoin-blockchain-time-anchor.md
+  h_10c93bba641ef0 2
+  h_10c93bba641ef0 1,60
+content/03-architecture/01-view1.md
+  h_10c93bba641ef0 1
+docs/architecture/index.html
+  h_10c93bba641ef0 35,45
+docs/architecture/view1.html
+  h_10c93bba641ef0 6,35,39,41
+docs/architecture/view2.html
+  h_10c93bba641ef0 35,43
+docs/assets/search-index.js
+  h_10c93bba641ef0 1
+docs/decisions/anchoring/ADR-010-bitcoin-blockchain-time-anchor.html
+  h_10c93bba641ef0 6,35,39,41-42
+docs/decisions/anchoring/ADR-015-rfc-3161-time-anchor.html
+  h_10c93bba641ef0 35,53
+docs/decisions/anchoring/ADR-020-opentimestamps-anchor.html
+  h_10c93bba641ef0 35
+docs/decisions/anchoring/ADR-030-sha256-file-fingerprint.html
+  h_10c93bba641ef0 35
+docs/decisions/anchoring/index.html
+  h_10c93bba641ef0 35,44
+docs/decisions/cryptography/index.html
+  h_10c93bba641ef0 35,44
+docs/decisions/index.html
+  h_10c93bba641ef0 35
+docs/decisions/proof-record/index.html
+  h_10c93bba641ef0 1-50
+docs/decisions/tech-stack/index.html
+  h_10c93bba641ef0 35,44
+docs/index.html
+  h_10c93bba641ef0 35
+docs/references/citations/index.html
+  h_10c93bba641ef0 35
+docs/references/glossary/index.html
+  h_10c93bba641ef0 35
+docs/requirements/data/index.html
+  h_10c93bba641ef0 35
+docs/requirements/functional/index.html
+  h_10c93bba641ef0 35
+docs/requirements/index.html
+  h_10c93bba641ef0 35
+docs/requirements/quality/index.html
+  h_10c93bba641ef0 35
+docs/requirements/quality/performance.html
+  h_10c93bba641ef0 35
+docs/requirements/quality/scalability.html
+  h_10c93bba641ef0 35
+docs/requirements/quality/security.html
+  h_10c93bba641ef0 35
+docs/requirements/standards/index.html
+  h_10c93bba641ef0 35
+docs/requirements/theory/index.html
+  h_10c93bba641ef0 35
+docs/requirements/user/index.html
+  h_10c93bba641ef0 35
+docs/software/gami-app/index.html
+  h_10c93bba641ef0 35
+docs/software/gami-hash/index.html
+  h_10c93bba641ef0 35
+docs/software/gami-verify/index.html
+  h_10c93bba641ef0 35
+docs/software/index.html
+  h_10c93bba641ef0 35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e988c58a02d57d53830b75bdb09b6a0b98be59a2",
+  "prompts": {},
+  "humans": {
+    "h_10c93bba641ef0": {
+      "author": "Peter Van Garderen <vangarderen.peter@gmail.com>"
+    }
+  }
+}
