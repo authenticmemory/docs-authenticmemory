@@ -1,5 +1,5 @@
 # Bitcoin blockchain time anchor
-Architectural Decision Record (ADR) 010
+Architectural Decision Record (ADR) **010**
 
 ## Description
 
