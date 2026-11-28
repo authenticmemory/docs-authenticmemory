@@ -2,10 +2,8 @@
 // Builds the manual: content/**/*.md  ->  docs/**/*.html
 //
 //  1. Scans the content tree (folders = sections, NN- prefixes = order).
-//  2. Regenerates the list of pages in any section index.md that contains the
-//     toc markers (the home page, content/index.md, is left alone).
-//  3. Renders every page to static HTML with the sidebar navigation baked in.
-//  4. Writes the search data used by lunr.js in the browser.
+//  2. Renders every page to static HTML with the sidebar navigation baked in.
+//  3. Writes the search data used by lunr.js in the browser.
 //
 // The output uses only relative URLs, so it works from file:// or any web host.
 
@@ -22,8 +20,6 @@ const DOCS = path.join(ROOT, config.contentDir); // markdown sources
 const OUT = path.join(ROOT, config.outDir); // generated site, never edited by hand
 const KEEP = new Set(['CNAME']); // files in the output folder that survive a rebuild
 const THEME = path.join(ROOT, 'tools', 'theme');
-const TOC_START = '<!-- toc:start -->';
-const TOC_END = '<!-- toc:end -->';
 
 const posix = path.posix;
 const esc = (s) =>
@@ -75,52 +71,6 @@ function scan(dir, rel = '') {
     }
   }
   return nodes;
-}
-
-// ------------------------------------------------- tables of contents (TOC)
-
-// Links are written relative to `base`, the folder of the file holding the list.
-function tocMarkdown(nodes, base = '', depth = 0) {
-  return nodes
-    .map((n) => {
-      const label = n.src ? `[${n.title}](${posix.relative(base, n.src)})` : `**${n.title}**`;
-      return `${'  '.repeat(depth)}- ${label}\n${tocMarkdown(n.children, base, depth + 1)}`;
-    })
-    .join('');
-}
-
-// Replace whatever sits between the toc markers. Returns null if the file has none.
-function fillToc(text, nodes, base) {
-  const start = text.indexOf(TOC_START);
-  const end = text.indexOf(TOC_END);
-  if (start < 0 || end < start) return null;
-  return `${text.slice(0, start)}${TOC_START}\n${tocMarkdown(nodes, base)}${text.slice(end)}`;
-}
-
-// A section's index.md gets a list of its own pages wherever it has the markers.
-// The home page (content/index.md) is never touched: it is entirely hand-written.
-function updateTocs(tree) {
-  const changed = [];
-  const save = (rel, before, after) => {
-    if (after === null || after === before) return;
-    fs.writeFileSync(path.join(DOCS, rel), after);
-    changed.push(rel);
-  };
-
-  const home = path.join(DOCS, 'index.md');
-  if (!fs.existsSync(home)) save('index.md', null, `# ${config.title}\n`); // the site needs a home page
-
-  (function walk(nodes) {
-    for (const n of nodes) {
-      if (!n.children.length) continue;
-      if (n.src) {
-        const section = fs.readFileSync(path.join(DOCS, n.src), 'utf8');
-        save(n.src, section, fillToc(section, n.children, posix.dirname(n.src)));
-      }
-      walk(n.children);
-    }
-  })(tree);
-  return changed;
 }
 
 // ----------------------------------------------------------------- markdown
@@ -192,6 +142,20 @@ const relUrl = (page, out) => posix.relative(posix.dirname(page.out), out);
 // Runs inline right after the sidebar so reopened branches never flicker.
 const NAV_RESTORE = `<script>try{JSON.parse(sessionStorage.getItem('nav-open')||'[]').forEach(function(id){var li=document.querySelector('#sidebar li[data-nav-id="'+id+'"]');if(li){li.querySelector('.nav-toggle').setAttribute('aria-expanded','true');li.querySelector('ul').hidden=false}})}catch(e){}</script>`;
 
+// Home › section › subsection › this page. Sections without an index.md have no
+// page of their own, so they appear as plain text. The home page has no trail.
+function breadcrumbHtml(page) {
+  if (page.src === 'index.md') return '';
+  const items = [
+    `<li><a href="${esc(relUrl(page, 'index.html'))}">Introduction</a></li>`,
+    ...page.trail.map((n) =>
+      n.src ? `<li><a href="${esc(relUrl(page, toOut(n.src)))}">${esc(n.title)}</a></li>` : `<li>${esc(n.title)}</li>`,
+    ),
+    `<li aria-current="page">${esc(page.title)}</li>`,
+  ];
+  return `<nav class="breadcrumbs" aria-label="Breadcrumb"><ol>${items.join('')}</ol></nav>\n`;
+}
+
 function pageHtml(page, tree, prev, next) {
   const root = posix.relative(posix.dirname(page.out), '') || '.';
   const r = `${root}/`;
@@ -236,7 +200,7 @@ ${navHtml(tree, page)}
 </nav>
 ${NAV_RESTORE}
 <main class="content">
-<article>
+${breadcrumbHtml(page)}<article>
 ${page.html}
 </article>
 <nav class="pager" aria-label="Previous and next page">${pager}</nav>
@@ -268,15 +232,16 @@ function cleanOutput() {
 function build() {
   if (!fs.existsSync(DOCS)) throw new Error(`Content folder not found: ${DOCS}`);
   assets.length = 0;
+  const home = path.join(DOCS, 'index.md');
+  if (!fs.existsSync(home)) fs.writeFileSync(home, `# ${config.title}\n`); // the site needs a home page
   const tree = scan(DOCS);
-  const tocChanged = updateTocs(tree);
 
   // Flatten to reading order, remembering each page's section trail for search.
   const pages = [{ title: config.title, src: 'index.md', id: 'index.html', trail: [] }];
   (function walk(nodes, trail) {
     for (const n of nodes) {
       if (n.src) pages.push({ title: n.title, src: n.src, id: n.id, trail });
-      walk(n.children, [...trail, n.title]);
+      walk(n.children, [...trail, n]);
     }
   })(tree, []);
 
@@ -292,7 +257,7 @@ function build() {
     id: i,
     url: p.out,
     title: p.title,
-    section: p.trail.join(' › '),
+    section: p.trail.map((n) => n.title).join(' › '),
     text: toText(p.html),
   }));
   write('assets/search-index.js', `window.SEARCH_DOCS = ${JSON.stringify(searchDocs)};\n`);
@@ -308,7 +273,7 @@ function build() {
   write('.nojekyll', ''); // GitHub Pages: serve the files as-is
 
   const rel = (p) => path.relative(ROOT, p);
-  console.log(`Built ${pages.length} pages -> ${rel(OUT)}/index.html${tocChanged.length ? ` (contents updated in ${tocChanged.join(', ')})` : ''}`);
+  console.log(`Built ${pages.length} pages -> ${rel(OUT)}/index.html`);
 }
 
 build();

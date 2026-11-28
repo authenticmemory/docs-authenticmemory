@@ -27,10 +27,7 @@ HTML never falls behind the Markdown.
 - **Images** and other files go in `content/` next to the pages that use them.
 - **Links** between pages point at the Markdown file (`../02-guides/01-authentication.md`).
   They work on GitHub as written and are converted to `.html` in the built site.
-- **`content/index.md`** is the home page. It is entirely hand-written.
-- **Section contents** can be generated: put the lines `<!-- toc:start -->` and
-  `<!-- toc:end -->` in a section's `index.md` and the build fills in the list of pages
-  in that section between them. Without the markers, the page is left as you wrote it.
+- **`content/index.md`** is the home page.
 - **Do not edit anything in `docs/`**. It is emptied and regenerated on every build
   (only a `CNAME` file is kept). The look and
   behaviour live in [tools/theme/](tools/theme/), including the header logo; the logo's link

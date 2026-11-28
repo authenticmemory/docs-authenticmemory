@@ -232,6 +232,13 @@ mark { background: var(--mark); color: inherit; border-radius: 2px; }
 .nav-collapsed .sidebar { transform: translateX(-100%); visibility: hidden; transition: transform 0.2s ease, visibility 0s 0.2s; }
 .nav-collapsed .content { margin-left: 0; }
 
+.breadcrumbs { margin-bottom: 18px; color: var(--muted); font-size: 14px; line-height: 1.4; }
+.breadcrumbs ol { display: flex; flex-wrap: wrap; gap: 4px 0; margin: 0; padding: 0; list-style: none; }
+.breadcrumbs li + li::before { content: "›"; margin: 0 8px; color: var(--muted); }
+.breadcrumbs a { color: var(--muted); }
+.breadcrumbs a:hover { color: var(--accent); }
+.breadcrumbs [aria-current="page"] { color: var(--text); }
+
 article h1, article h2, article h3, article h4 { line-height: 1.25; margin: 2em 0 0.6em; }
 article h1, article h2, article h3 { font-family: var(--heading); }
 article h1 { font-size: 2rem; margin-top: 0; }
