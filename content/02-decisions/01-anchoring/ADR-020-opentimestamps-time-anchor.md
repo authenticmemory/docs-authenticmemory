@@ -1,4 +1,5 @@
-# ADR 020: Opentimestamps anchoring.md
+# Opentimestamps time anchor
+Architectural Decision Record (ADR) **020**
 
 ## Title
 
@@ -10,7 +11,7 @@ Accepted
 
 ## Context / Requirement Reference
 
-[ADR-010](ADR-010-bitcoin-blockchain-time-anchor.md) selects Bitcoin as the time anchor. Writing one Bitcoin transaction per record is impractical: institutions may anchor tens of millions of files per year, and each transaction carries a fee and confirmation delay. A mechanism is needed that commits very large numbers of digests to Bitcoin cheaply, produces a portable proof per record, and can be verified with open tooling.
+Authentic Memory has selected the Bitcoin blockchain network as its primary time anchor. Writing one Bitcoin transaction per record is impractical: institutions may anchor tens of millions of files per year, and each transaction carries a fee and confirmation delay. A mechanism is needed that commits very large numbers of digests to Bitcoin cheaply, produces a portable proof per record, and can be verified with open tooling.
 
 ## Decision
 
@@ -25,7 +26,7 @@ Accepted
 
 - OpenTimestamps is an open protocol with independent implementations, usable without an account or fee.
 - Aggregation lets a single Bitcoin commitment cover arbitrarily many records, so anchoring cost does not grow with collection size.
-- OTS uses SHA-256, the same hash used for file fingerprints ([ADR-030](ADR-030-sha256-file-fingerprint.md)).
+- OTS uses SHA-256, the same hash used for Authentic Memory file fingerprints.
 - A completed OTS proof is verified against Bitcoin block headers alone. The calendars are needed to *create and upgrade* proofs, not to *verify* them.
 
 ## Assumptions
@@ -36,13 +37,12 @@ Accepted
 
 ## Alternatives Considered
 
-- **Authentic Memory writing its own Bitcoin transactions, or running its own calendar.** Not recorded as evaluated for the current release. An institution-run OTS calendar or Bitcoin node appears in the to-be architecture as a planned *sovereign anchoring* path.
-- **Non-Bitcoin anchors** are covered in [ADR-010](ADR-010-bitcoin-blockchain-time-anchor.md).
+- **Authentic Memory writing its own Bitcoin transactions, or running its own calendar.** Nope.
+- RFC 3161 selected as second option.
 
 ## Consequences / Implications
 
 - **Easier:** anchoring scales to large batches at negligible marginal cost.
-- **Harder:** the OTS calendars are a dependency for *creating* proofs, not for verifying them. Until a pending proof is upgraded (usually within hours), it relies on at least one of the calendars that received it. If all fail, the batch is resubmitted with a later date (risk T-10). Overdue pending proofs need alerting. Running Authentic Memory's own calendar, estimated at €10k a year including the operator, would remove the creation dependency.
-- The Bitcoin chain stores only a Merkle root, so a lost OPR cannot be rebuilt from the blockchain. Institution-held copies and replication are essential (risk T-04).
-- The service depends on volunteer infrastructure it does not control (risk B-16).
-
+- **Harder:** the OTS calendars are a dependency for *creating* proofs, not for verifying them. Until a pending proof is upgraded (usually within hours), it relies on at least one of the calendars that received it. If all fail, the batch is resubmitted with a later date. Overdue pending proofs need alerting. Running Authentic Memory's own calendar, estimated at €10k a year including the operator, would remove the creation dependency.
+- The Bitcoin chain stores only a Merkle root, so a lost OPR cannot be rebuilt from the blockchain. Institution-held copies and replication are essential.
+- The service depends on volunteer infrastructure it does not control.
