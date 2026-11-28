@@ -44,68 +44,60 @@
 <p>Use eIDAS-qualified RFC 3161 time-stamps from two unrelated providers as the second, Bitcoin-independent time anchor for Authentic Memory proof records.</p>
 <h2 id="status" tabindex="-1">Status</h2>
 <p>Proposed</p>
-<p>Decision D-13 (choice of the second timestamping system) is still open in the manual. This record assumes the recommendation of the <a href="../Anchoring-alternatives/authenticmemory-anchoring-alternatives.html">anchoring evaluation report</a> is adopted. Change the status to Accepted when D-13 is closed and the open items below are resolved.</p>
 <h2 id="context-%2F-requirement-reference" tabindex="-1">Context / Requirement Reference</h2>
-<p><a href="ADR-010-bitcoin-blockchain-time-anchor.html">ADR-010</a> makes the Bitcoin blockchain, reached through OpenTimestamps calendars (<a href="ADR-020-opentimestamps-anchoring.html">ADR-020</a>), the only time anchor. Every live proof therefore shares one failure mode. The project’s own risk register (T-08) and an outside critique in October 2026 both hold that a single anchor is not enough over decades, and the funder commitment is a second independent timestamping system in production by 31 December 2026 (D-13, requirement U-36).</p>
-<p>The requirement reads: “Authentic Memory must implement a second anchor that does not rely on Bitcoin (e.g. an RFC 3161 or eIDAS timestamp). Every batch goes to both, the verifier shows both.”</p>
+<p><a href="ADR-010-bitcoin-blockchain-time-anchor.html">ADR-010</a> makes the Bitcoin blockchain, reached through OpenTimestamps calendars (<a href="ADR-020-opentimestamps-anchoring.html">ADR-020</a>), the only time anchor. Every live proof therefore shares one failure mode.</p>
+<p>The funder commitment is a second independent timestamping system in production by 31 December 2026: “Every batch goes to both, the verifier shows both.”</p>
 <p>The second anchor therefore has to:</p>
 <ul>
 <li>fail for different reasons than Bitcoin and the OpenTimestamps calendars;</li>
 <li>carry recognised legal effect, which the Bitcoin anchor does not, for institutions with legal retention duties;</li>
 <li>stay verifiable by third parties, offline, without Authentic Memory;</li>
-<li>receive only batch roots, never file digests (risk T-14);</li>
+<li>receive only batch roots, never file digests</li>
 <li>stay cheap and light to operate for a small non-profit that anchors a few batch roots a day, without dependence on any one vendor.</li>
 </ul>
 <h2 id="decision" tabindex="-1">Decision</h2>
-<p>Anchor every batch a second time with RFC 3161 time-stamp tokens from two eIDAS-qualified time-stamping authorities.</p>
+<p>Anchor every batch a second time with RFC 3161 time-stamp tokens through an eIDAS-qualified time-stamping authorities.</p>
 <ul>
 <li><strong>Mechanism.</strong> The token is issued over the same value that is submitted to OpenTimestamps for the batch. That value is sent as the <code>messageImprint</code> with the SHA-256 identifier and is not hashed again.</li>
-<li><strong>Two providers.</strong> Each batch is stamped by two qualified authorities that are separate companies in different countries. The pair tested on 26 November 2026 is Sectigo (Europe) SL, Spain, and DigiCert Europe, Netherlands.</li>
-<li><strong>Entitlement.</strong> At least one qualified source is held under contract or prepaid terms, so that the service is a right and not a tolerated use of an open endpoint.</li>
+<li><strong>Entitlement.</strong> Keep a qualified source under contract with prepaid terms, so that the service is a right and not a tolerated use of an open endpoint.</li>
 <li><strong>Evidence stored.</strong> Each token is stored in the Open Proof Record with the signer’s certificate chain, the revocation evidence current at the time, the policy identifier, the attested time and a digest of the national trusted list used to confirm qualified status.</li>
 <li><strong>Record format.</strong> The OPR carries a list of anchors typed by mechanism, in place of the single OpenTimestamps object. Each entry states its trust basis and what it relies on.</li>
 <li><strong>Verifier.</strong> The verifier shows each anchor on its own line with its type, attested time, precision and trust basis. It never merges anchors into one result, and it reports an unknown anchor type as “not evaluated”, not as a failure.</li>
 <li><strong>Renewal.</strong> Each time-stamp is renewed before its signer certificate expires or its algorithm is deprecated, following the Evidence Record method (RFC 4998).</li>
 </ul>
-<p>Bitcoin remains the primary anchor. Certificate Transparency, which the manual had proposed as the fast path, is not the mandatory second anchor and remains a candidate for a later, additional one.</p>
 <h2 id="rationale" tabindex="-1">Rationale</h2>
 <ul>
 <li><strong>Independent failure.</strong> A signed token from a supervised authority involves no blockchain. It fails for different reasons than Bitcoin and the OpenTimestamps calendars.</li>
 <li><strong>Legal standing.</strong> A qualified electronic time-stamp carries a presumption of the accuracy of its date and of the integrity of the data in every EU Member State (eIDAS Article 41).</li>
 <li><strong>Mutual protection.</strong> The Bitcoin anchor later shows that a token existed before its certificate expired. The token gives a time to the second and a legal effect that Bitcoin cannot.</li>
-<li><strong>No single authority.</strong> Two unrelated providers remove the single-authority risk (T-11). RFC 3161 itself recommends tokens from two authorities against key compromise.</li>
-<li><strong>Standard and simple.</strong> RFC 3161 is a published IETF standard. Tokens were obtained and parsed on 26 November 2026 with stock <code>openssl</code> and <code>curl</code>. No custom protocol or verifier logic is needed beyond certificate-path checking.</li>
+<li><strong>Standard and simple.</strong> RFC 3161 is a published IETF standard. No custom protocol or verifier logic is needed beyond certificate-path checking, stock <code>openssl</code> and <code>curl</code> can be used.</li>
 <li><strong>Privacy.</strong> The protocol time-stamps a hash only and forbids the authority from recording the requester. Only the batch root leaves the service.</li>
 <li><strong>Cost and schedule.</strong> Between nothing and about €65 a year at current volume, and it can be in production before 31 December 2026.</li>
-<li><strong>Best of the options examined.</strong> It is the only option that passed every test in the evaluation, scoring 28 of 30 across legal standing, long-term verification, independent failure, integration effort, cost and continuity. The next option scored 22.</li>
 </ul>
 <h2 id="assumptions" tabindex="-1">Assumptions</h2>
 <ul>
-<li>Both authorities remain on their national trusted lists with “granted” status for qualified time-stamps. Status was matched for both on 26 November 2026.</li>
-<li>The operators accept this use. Sectigo’s disclosure statement permits use for any application needing proof that a datum existed. DigiCert Europe’s policy reserves the right to limit use to its certificate holders, so written confirmation or a contract is still to be obtained.</li>
+<li>The chosen authority remains on its national trusted list with “granted” status for qualified time-stamps.</li>
+<li>The operators accept this use. For example, Sectigo’s disclosure statement permits use for any application needing proof that a datum existed. DigiCert Europe’s policy reserves the right to limit use to its certificate holders, so written confirmation or a contract is still to be obtained.</li>
 <li>Both authorities publish revocation data that Authentic Memory may archive.</li>
 <li>SHA-256 (see <a href="ADR-030-sha256-file-fingerprint.html">ADR-030</a>) and the authorities’ signature algorithms stay sound until the first renewal.</li>
-<li>The renewal process is built with the renewal-chain prototype due on 30 April 2027.</li>
-<li>The OPR’s anchor fields sit outside the institution’s signed form, so anchors can be added and renewed without a new institutional signature. This is to be confirmed against the code and decision D-02.</li>
+<li>The OPR’s anchor fields sit outside the institution’s signed form, so anchors can be added and renewed without a new institutional signature.</li>
 <li>eIDAS qualification is persuasive, though not binding, for institutions outside the EU.</li>
 </ul>
 <h2 id="alternatives-considered" tabindex="-1">Alternatives Considered</h2>
-<p>Details and sources for each are in the <a href="../Anchoring-alternatives/authenticmemory-anchoring-alternatives.html">evaluation report</a> and the knowledge-base files beside it.</p>
 <ul>
-<li><strong>Non-qualified RFC 3161 time-stamps</strong> (<a href="../Anchoring-alternatives/digistamp.html">DigiStamp</a>, <a href="../Anchoring-alternatives/freetsa.html">FreeTSA</a>, certificate authorities’ public endpoints). Score 22 of 30. Same integration, but no legal presumption in the EU, and roots that a verifier must be told to trust. FreeTSA has no accountable operator and the public code-signing endpoints publish no terms granting general use. Kept as the fallback and as an optional third token.</li>
-<li><strong>Certificate Transparency anchor</strong> (<a href="../Anchoring-alternatives/certificate-transparency.html">notes</a>). Score 16 of 30. Rejected as the mandatory anchor: logs accept certificates, not hashes; a signed certificate timestamp is a promise to include, not a proof; the evidence bundle is large and decays as logs retire; it depends on a certificate authority’s tolerance, has no legal standing and needs custom verifier code.</li>
-<li><strong>A single qualified provider</strong> (for example <a href="../Anchoring-alternatives/eadtrust-qualified-timestamps.html">EADTrust</a> alone). Rejected because it leaves one authority as a single point of failure. EADTrust also publishes no endpoint, price or policy identifier, so it could not be compared without a sales contact.</li>
-<li><strong>Services that rely on Bitcoin</strong> (a second <a href="../Anchoring-alternatives/opentimestamps.html">OpenTimestamps</a> proof or calendar, <a href="../Anchoring-alternatives/lets-seal.html">Let’s Seal</a>, <a href="../Anchoring-alternatives/project-timestamper.html">Project Timestamper</a>, the Bitcoin leg of <a href="../Anchoring-alternatives/originstamp.html">OriginStamp</a>). Rejected: the same anchor under another name.</li>
-<li><strong>Other blockchains</strong> (the Ethereum leg of OriginStamp, or writing directly to Ethereum, Algorand, Tezos, Cardano or Arweave). Rejected: not Bitcoin in name, but the same class of risk as the first anchor, with key and fee management and no legal standing.</li>
-<li><strong>Zeitwerk</strong> (<a href="../Anchoring-alternatives/zeitwerk-timestamping.html">notes</a>). A good design, but a prototype with no co-signers, no written specification and no continuation funding. To be reassessed only against the published acceptance criteria.</li>
-<li><strong>OriginTrail and WordProof</strong> (<a href="../Anchoring-alternatives/origintrail-dkg.html">OriginTrail</a>, <a href="../Anchoring-alternatives/wordproof-timestamp.html">WordProof</a>). Rejected as not independently verifiable: OriginTrail needs tokens and a node, its on-chain commitment is undocumented and it cannot be verified offline; WordProof is a publisher service on EOS with vendor-dependent verification.</li>
-<li><strong>C2PA and IdentityTrusts</strong> (<a href="../Anchoring-alternatives/c2pa-time-stamps.html">C2PA</a>, <a href="../Anchoring-alternatives/identity-trusts.html">IdentityTrusts</a>). Not time sources. C2PA stores RFC 3161 tokens but does not issue time; IdentityTrusts produces signed consent records with no time attestation.</li>
-<li><strong>Guardtime KSI.</strong> Needs neither a blockchain nor a certificate to verify, which would make it the most independent option. Deferred for cost, a single-vendor format and unconfirmed trusted-list status. Candidate for a later third kind of anchor.</li>
+<li><strong>Non-qualified RFC 3161 time-stamps</strong> DigiStamp FreeTSA, certificate authorities’ public endpoints.</li>
+<li><strong>Certificate Transparency anchor</strong> Rejected as the mandatory anchor: logs accept certificates, not hashes; a signed certificate timestamp is a promise to include, not a proof; the evidence bundle is large and decays as logs retire; it depends on a certificate authority’s tolerance, has no legal standing and needs custom verifier code.</li>
+<li><strong>Services that rely on Bitcoin</strong> A second OpenTimestamps proof or calendar, Let’s Seal, Project Timestamper, the Bitcoin leg of OriginStamp. Rejected: the same anchor under another name.</li>
+<li><strong>Other blockchains</strong> The Ethereum leg of OriginStamp, or writing directly to Ethereum, Algorand, Tezos, Cardano or Arweave. Rejected: not Bitcoin in name, but the same class of risk as the first anchor, with key and fee management and no legal standing.</li>
+<li><strong>Zeitwerk</strong> A good design, but a prototype with no co-signers, no written specification and no continuation funding. To be reassessed only against the published acceptance criteria.</li>
+<li><strong>OriginTrail and WordProof</strong>  Rejected as not independently verifiable: OriginTrail needs tokens and a node, its on-chain commitment is undocumented and it cannot be verified offline; WordProof is a publisher service on EOS with vendor-dependent verification.</li>
+<li><strong>C2PA and IdentityTrusts</strong> Not time sources. C2PA stores RFC 3161 tokens but does not issue time; IdentityTrusts produces signed consent records with no time attestation.</li>
+<li><strong>Guardtime KSI.</strong> Needs neither a blockchain nor a certificate to verify, which would make it the most independent option. Deferred for cost, a single-vendor format and unconfirmed trusted-list status. <strong>Candidate for a later third kind of anchor</strong>.</li>
 <li><strong>Sigstore Rekor.</strong> Built for software signing; version 2 has no time of its own and retires log shards about every six months.</li>
 <li><strong>A self-hosted time-stamping authority or transparency log.</strong> Gives no independent trust.</li>
 <li><strong>IETF SCITT, Roughtime and randomness beacons</strong> (drand, NIST). No neutral public service, experimental status, or proof of “not before” only.</li>
 <li><strong>eIDAS qualified electronic ledgers.</strong> Defined in law since 2024, but no provider was found in operation.</li>
-<li><strong>Publishing roots widely</strong> (DOI deposit, Internet Archive, print). Nearly free and suitable as an extra, but its trust is social, so it is not the formal second anchor.</li>
+<li><strong>Publishing roots widely</strong> (DOI deposit, Internet Archive, AT Proto feed, print). Nearly free and suitable as an extra, but its trust is social, so it is not the formal second anchor.</li>
 </ul>
 <h2 id="consequences-%2F-implications" tabindex="-1">Consequences / Implications</h2>
 <ul>
@@ -115,31 +107,15 @@
 <li><strong>A trust list must be governed:</strong> the verifier needs a published, versioned list of accepted authorities and a rule for judging a token against the trusted list as it stood at the time. This is a new governance duty.</li>
 <li><strong>Record format and verifier change:</strong> the proof record schema, the batch-close workflow, the web verifier and the CLI verifier must all handle a list of anchors, and the CLI verifier must check RFC 3161 tokens offline. The forms used for signing and for time-stamping must exclude the anchor list.</li>
 <li><strong>Records grow:</strong> a token with its chain adds about 4 to 6 kB per provider. Whether the chain is stored per record or once per batch is undecided.</li>
-<li><strong>New external dependencies:</strong> two commercial authorities join the dependency register (risk B-16). Open endpoints can be withdrawn or charged for.</li>
-<li><strong>Shared technology:</strong> both tokens rest on X.509 certificates. They are independent of Bitcoin but not of each other in kind.</li>
+<li><strong>Shared technology:</strong> RFC 3161 tokens rest on X.509 certificates. They are independent of Bitcoin but not of each other in kind.</li>
 <li><strong>Existing records:</strong> records already issued can be time-stamped now, but the token proves existence only from the day it is made.</li>
-<li><strong>A trusted third party enters the design:</strong> the first principle of ADR-010 is that no authority has to survive. This decision accepts an authority because it is additional to, and checkable against, the anchor that needs none.</li>
-<li><strong>Earlier plan reversed:</strong> the manual’s plan to run Certificate Transparency as the fast path, with RFC 3161 as the fallback, is turned around.</li>
+<li><strong>A trusted third party enters the design:</strong> the first principle of ADR-010 (timestamping on Bitcoin) is that no authority has to survive. This decision accepts an authority because it is additional to, and checkable against, the anchor that needs none.</li>
 </ul>
 <h2 id="related-decisions-%2F-notes" tabindex="-1">Related Decisions / Notes</h2>
 <ul>
 <li><a href="ADR-010-bitcoin-blockchain-time-anchor.html">ADR-010</a>: Bitcoin as the primary time anchor. Unchanged; this record adds to it.</li>
 <li><a href="ADR-020-opentimestamps-anchoring.html">ADR-020</a>: OpenTimestamps as the anchoring protocol. Unchanged.</li>
-<li><a href="ADR-030-sha256-file-fingerprint.html">ADR-030</a>: SHA-256 file fingerprint.</li>
-<li><a href="../Software-dev/V1/V1%20ADRs/ADR-006-gami-proof-record-format.html">V1 ADR-006</a>: GPR format. Needs a successor for the multi-anchor record; see the <a href="../../references/GPR/GRPv2.0.2.html">Open Proof Record 2.0.2 working draft</a>.</li>
-<li><a href="../Software-dev/V1/V1%20ADRs/ADR-007-jcs-canonicalization.html">V1 ADR-007</a>: canonical form, which must exclude the anchor list.</li>
-<li><a href="../Software-dev/V1/V1%20ADRs/ADR-016-independent-cli-verifier.html">V1 ADR-016</a>: independent CLI verifier, which must verify RFC 3161 tokens offline.</li>
-<li>Manual: decisions D-02 and D-13; risks T-08, T-09, T-11, T-14 and B-16; requirement U-36; user story U-56.</li>
-<li>Evidence: <a href="../Anchoring-alternatives/authenticmemory-anchoring-alternatives.html">evaluation report</a> and <a href="../Anchoring-alternatives/rfc-3161-time-stamp-protocol.html">RFC 3161 notes</a>.</li>
 </ul>
-<p>Open items before acceptance:</p>
-<ol>
-<li>Written permission or a contract with each chosen authority.</li>
-<li>Choice of the contracted provider (Disig prepaid packs were the cheapest found).</li>
-<li>Where certificate chains and revocation data are stored: per record or once per batch.</li>
-<li>The verifier’s trust-list governance.</li>
-<li>A trusted-list check for any provider not yet matched, including EADTrust.</li>
-</ol>
 
 </article>
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="ADR-010-bitcoin-blockchain-time-anchor.html"><span>Previous</span>Bitcoin blockchain time anchor</a><a class="next" href="ADR-020-opentimestamps-anchor.html"><span>Next</span>ADR 020: Opentimestamps anchoring.md</a></nav>
