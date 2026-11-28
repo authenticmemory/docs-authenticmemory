@@ -241,8 +241,7 @@ mark { background: var(--mark); color: inherit; border-radius: 2px; }
 
 article h1, article h2, article h3, article h4 { line-height: 1.25; margin: 2em 0 0.6em; }
 article h1, article h2, article h3 { font-family: var(--heading); }
-article h1 { font-size: 2rem; margin-top: 0; }
-[data-theme="dark"] article h1 { color: var(--accent); }
+article h1 { font-size: 2rem; margin-top: 0; color: var(--accent); }
 article h2 { font-size: 1.45rem; padding-bottom: 0.3em; border-bottom: 1px solid var(--border); }
 article h3 { font-size: 1.15rem; }
 article p, article ul, article ol, article pre, article blockquote, .table-wrap { margin: 0 0 1.1em; }
