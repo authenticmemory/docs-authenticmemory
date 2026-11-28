@@ -207,6 +207,7 @@ function pageHtml(page, tree, prev, next) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
+<link rel="stylesheet" href="${r}assets/fonts.css">
 <link rel="stylesheet" href="${r}assets/style.css">
 <script>(function(){var d=document.documentElement,t=null;try{t=localStorage.getItem('theme');if(localStorage.getItem('nav-collapsed')==='1')d.classList.add('nav-collapsed')}catch(e){}if(t!=='dark'&&t!=='light')t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';d.setAttribute('data-theme',t)})()</script>
 </head>
@@ -298,7 +299,11 @@ function build() {
 
   const require = createRequire(import.meta.url);
   write('assets/lunr.min.js', fs.readFileSync(require.resolve('lunr/lunr.min.js')));
-  for (const f of fs.readdirSync(THEME)) write(`assets/${f}`, fs.readFileSync(path.join(THEME, f)));
+  // The theme folder is copied whole, including the fonts/ folder.
+  fs.cpSync(THEME, path.join(OUT, 'assets'), {
+    recursive: true,
+    filter: (src) => !path.basename(src).startsWith('.'),
+  });
   for (const a of assets) write(toOut(a), fs.readFileSync(path.join(DOCS, a)));
   write('.nojekyll', ''); // GitHub Pages: serve the files as-is
 
