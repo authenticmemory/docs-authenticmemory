@@ -1,0 +1,102 @@
+content/04-software/03-gami-verify/index.md
+  h_10c93bba641ef0 1
+content/04-software/02-gami-app/index.md
+  h_10c93bba641ef0 1
+content/index.md
+  h_10c93bba641ef0 13
+content/04-software/01-gami-hash/index.md
+  h_10c93bba641ef0 1
+content/02-decisions/01-anchoring/index.md
+  h_10c93bba641ef0 1
+content/02-decisions/03-software.md/index.md
+  h_10c93bba641ef0 1
+README.md
+  s_509bdec4fa831c::t_718859b8bac6d3 30
+docs/architecture/index.html
+  s_509bdec4fa831c::t_01f0c080f77d28 32,36,42
+docs/architecture/view1.html
+  s_509bdec4fa831c::t_a55f617b7e6b5a 32,36
+docs/architecture/view2.html
+  s_509bdec4fa831c::t_c52f4b921fb1bb 32,36
+docs/assets/search-index.js
+  s_509bdec4fa831c::t_835a51e8a3dc00 1
+docs/assets/style.css
+  s_509bdec4fa831c::t_1c27d9301995d1 235-241
+docs/decisions/anchoring/ADR-010-bitcoin-blockchain-time-anchor.html
+  s_509bdec4fa831c::t_bfa74a9a2654b9 32,36,93
+docs/decisions/anchoring/ADR-015-rfc-3161-time-anchor.html
+  s_509bdec4fa831c::t_a947c8998f2002 32,36
+docs/decisions/anchoring/ADR-020-opentimestamps-anchor.html
+  s_509bdec4fa831c::t_b079e40c44f5dc 32,36
+docs/decisions/anchoring/ADR-030-sha256-file-fingerprint.html
+  s_509bdec4fa831c::t_9ae949ac15f353 32,36
+docs/decisions/anchoring/index.html
+  s_509bdec4fa831c::t_4faabc95333be1 6,32,36,38
+docs/decisions/cryptography/index.html
+  s_509bdec4fa831c::t_5feee0b6f8696e 32,36,41
+docs/decisions/index.html
+  s_509bdec4fa831c::t_21973c629f0b2c 32,36,42
+docs/decisions/software.md/index.html
+  s_509bdec4fa831c::t_2f51cd71da5ad2 6,32,36,38
+docs/index.html
+  s_509bdec4fa831c::t_d7f36260189d0b 32,47
+docs/references/citations/index.html
+  s_509bdec4fa831c::t_322f91c02c8272 32,36
+docs/references/glossary/index.html
+  s_509bdec4fa831c::t_8adca99e40b460 32,36,41
+docs/requirements/data/index.html
+  s_509bdec4fa831c::t_a4b2ee0485838a 32,36
+docs/requirements/functional/index.html
+  s_509bdec4fa831c::t_b3f46f6dc63d8d 32,36
+docs/requirements/index.html
+  s_509bdec4fa831c::t_8ea76af52b7566 32,36
+docs/requirements/quality/index.html
+  s_509bdec4fa831c::t_dbb9d9c84a4603 32,36
+docs/requirements/quality/performance.html
+  s_509bdec4fa831c::t_68a7f8241bd779 32,36
+docs/requirements/quality/scalability.html
+  s_509bdec4fa831c::t_544a19c6ca2236 32,36
+docs/requirements/quality/security.html
+  s_509bdec4fa831c::t_445a45fae5088d 32,36
+docs/requirements/standards/index.html
+  s_509bdec4fa831c::t_82bc796322c9f4 32,36
+docs/requirements/theory/index.html
+  s_509bdec4fa831c::t_ca389dc3e03280 32,36
+docs/requirements/user/index.html
+  s_509bdec4fa831c::t_ddf844d231e9ae 32,36
+docs/software/gami-app/index.html
+  s_509bdec4fa831c::t_9a7d8b5e00978f 6,32,36,38,41
+docs/software/gami-hash/index.html
+  s_509bdec4fa831c::t_2fe70a64262004 6,32,36,38,41
+docs/software/gami-verify/index.html
+  s_509bdec4fa831c::t_5378b2ee347633 1-47
+docs/software/index.html
+  s_509bdec4fa831c::t_b024eef3927907 32,36,41
+tools/build.mjs
+  s_509bdec4fa831c::t_bb2c5214ccc757 5-6,145-158,203,235-236,244,260,276
+tools/hooks/pre-commit
+  s_509bdec4fa831c::t_ca498cc26343aa 2-3,13
+tools/theme/style.css
+  s_509bdec4fa831c::t_f6ccec32917395 235-241
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "eea601b42994a74d57d4191ed2cf7f5fc83f6dd2",
+  "prompts": {},
+  "humans": {
+    "h_10c93bba641ef0": {
+      "author": "Peter Van Garderen <vangarderen.peter@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_509bdec4fa831c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "343829b1-7a54-4af1-b7e0-df04b2add0b0",
+        "model": "unknown"
+      },
+      "human_author": "Peter Van Garderen <vangarderen.peter@gmail.com>"
+    }
+  }
+}
