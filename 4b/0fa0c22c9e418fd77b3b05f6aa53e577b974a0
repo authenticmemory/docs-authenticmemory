@@ -1,0 +1,21 @@
+manual.config.json
+  s_509bdec4fa831c::t_41c5c8601c7bbb 6
+tools/build.mjs
+  s_509bdec4fa831c::t_bb3ca9c9cecf81 195-197
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4b0fa0c22c9e418fd77b3b05f6aa53e577b974a0",
+  "prompts": {},
+  "sessions": {
+    "s_509bdec4fa831c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "343829b1-7a54-4af1-b7e0-df04b2add0b0",
+        "model": "unknown"
+      },
+      "human_author": "Peter Van Garderen <vangarderen.peter@gmail.com>"
+    }
+  }
+}
