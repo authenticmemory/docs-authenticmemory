@@ -1,0 +1,90 @@
+docs/architecture/index.html
+  s_25c60dd644fe7f::t_4c4ec609d4fe25 35,45
+docs/architecture/system-architecture.html
+  s_25c60dd644fe7f::t_9d039399e47a6b 35,2242
+docs/assets/search-index.js
+  s_25c60dd644fe7f::t_84ac5df91b72ff 1
+docs/assets/style.css
+  s_25c60dd644fe7f::t_961873e3525bb7 244
+docs/decisions/anchoring/ADR-010-bitcoin-blockchain-time-anchor.html
+  s_25c60dd644fe7f::t_517fa5395da9b2 35
+docs/decisions/anchoring/ADR-020-opentimestamps-time-anchor.html
+  s_25c60dd644fe7f::t_ccc6870798ed73 35
+docs/decisions/anchoring/ADR-030-rfc-3161-time-anchor.html
+  s_25c60dd644fe7f::t_03b0bcfd180495 35
+docs/decisions/anchoring/index.html
+  s_25c60dd644fe7f::t_ba6f1366749afd 35
+docs/decisions/cryptography/ADR-100-sha256-file-fingerprint.html
+  s_25c60dd644fe7f::t_98cecdbbfbba09 35
+docs/decisions/cryptography/ADR-110-ed25519-institutional-signatures.html
+  s_25c60dd644fe7f::t_0d8f73799765e4 35
+docs/decisions/cryptography/ADR-120-hardware-key-webauthn-signing.html
+  s_25c60dd644fe7f::t_2d1668634591c6 35
+docs/decisions/cryptography/ADR-130-did-web-institutional-identity.html
+  s_25c60dd644fe7f::t_b18772c4939af9 35
+docs/decisions/cryptography/index.html
+  s_25c60dd644fe7f::t_14a17f4a66d2f6 35
+docs/decisions/index.html
+  s_25c60dd644fe7f::t_059bff03a2cfe2 35
+docs/decisions/proof-record/index.html
+  s_25c60dd644fe7f::t_f383a05b75c346 35
+docs/decisions/tech-stack/index.html
+  s_25c60dd644fe7f::t_39ca39f94ad5b3 35
+docs/index.html
+  s_25c60dd644fe7f::t_6a58417f39bfa9 35
+docs/references/citations/index.html
+  s_25c60dd644fe7f::t_fe6b7ac5c9e7b3 35
+docs/references/glossary/index.html
+  s_25c60dd644fe7f::t_c7d630ae5b3063 35
+docs/requirements/data/index.html
+  s_25c60dd644fe7f::t_123aa3562f0b09 35
+docs/requirements/functional/index.html
+  s_25c60dd644fe7f::t_795e7414e33cd0 35
+docs/requirements/index.html
+  s_25c60dd644fe7f::t_651ffab9e90ecc 35
+docs/requirements/quality/index.html
+  s_25c60dd644fe7f::t_371a2bca04211a 35
+docs/requirements/quality/performance.html
+  s_25c60dd644fe7f::t_64efd2fa0ac3ae 35
+docs/requirements/quality/scalability.html
+  s_25c60dd644fe7f::t_e8c064b5bc4424 35
+docs/requirements/quality/security.html
+  s_25c60dd644fe7f::t_931e534ad4f61f 35
+docs/requirements/standards/index.html
+  s_25c60dd644fe7f::t_bd803962d27006 35
+docs/requirements/theory/index.html
+  s_25c60dd644fe7f::t_940056ed60bf54 35
+docs/requirements/user/index.html
+  s_25c60dd644fe7f::t_230a7feefcfeb2 35
+docs/software/gami-app/index.html
+  s_25c60dd644fe7f::t_3c75fc5de6bdd2 35
+docs/software/gami-hash/index.html
+  s_25c60dd644fe7f::t_ac5e9ad4b1df87 35
+docs/software/gami-verify/index.html
+  s_25c60dd644fe7f::t_f22c965977cf7f 35
+docs/software/index.html
+  s_25c60dd644fe7f::t_8e9fbdec2ac200 35
+tools/theme/style.css
+  s_25c60dd644fe7f::t_66bc81d84ad9f3 244
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "46e241735789060a2f9c54221f2c1d92b05f6756",
+  "prompts": {},
+  "humans": {
+    "h_10c93bba641ef0": {
+      "author": "Peter Van Garderen <vangarderen.peter@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_25c60dd644fe7f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9e91c5e4-c5c7-43ab-8b16-289782cc0407",
+        "model": "unknown"
+      },
+      "human_author": "Peter Van Garderen <vangarderen.peter@gmail.com>"
+    }
+  }
+}
