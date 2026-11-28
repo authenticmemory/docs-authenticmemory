@@ -1,9 +1,8 @@
-# Architecture Decision Record - Authentic Memory
-ADR-008-did-web-institutional-identity.md
+# did:webvh for institutional identity
+Architectural Decision Record (ADR) **130**
 
 ## Title
 
-Publish institutional signing keys as DIDs on the institution's own domain (did:web, moving to did:webvh)
 
 ## Status
 

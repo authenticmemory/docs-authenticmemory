@@ -1,5 +1,5 @@
-# Architecture Decision Record - Authentic Memory
-ADR-005-hardware-key-webauthn-signing.md
+# WebAuthn signing
+Architectural Decision Record (ADR) **120**
 
 ## Title
 

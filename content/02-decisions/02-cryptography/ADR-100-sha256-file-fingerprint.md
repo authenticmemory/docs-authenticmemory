@@ -1,5 +1,5 @@
-# Architecture Decision Record - Authentic Memory
-ADR-003-sha256-file-fingerprint.md
+# SHA-256 file fingerprint
+Architectural Decision Record (ADR) **100**
 
 ## Title
 

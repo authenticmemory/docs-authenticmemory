@@ -1,5 +1,5 @@
-# Architecture Decision Record - Authentic Memory
-ADR-004-ed25519-institutional-signatures.md
+# ed25519 institutional signatures
+Architectural Decision Record (ADR) **110**
 
 ## Title
 
