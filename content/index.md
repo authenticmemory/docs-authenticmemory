@@ -2,7 +2,9 @@
 
 > **This manual describes how our technology is designed and built.**
 >
-> [Authentic Memory](https://authenticmemory.org) is protecting historical records in a synthetic age. We provide non-profit infrastructure to ensure that humanity's historical record remains distinguishable from AI-generated content. We open-source our software under Apache 2.0 license for others to inspect and re-use.
+> [Authentic Memory](https://authenticmemory.org) is protecting historical records in a synthetic age. We provide non-profit infrastructure to ensure that humanity's historical record remains distinguishable from AI-generated content.
+>
+> We open-source our software under Apache 2.0 license for others to inspect and re-use.
 
 
 - If you are **new to Authentic Memory**, check out a [demonstration](https://authenticmemory.org/how-it-works/).
