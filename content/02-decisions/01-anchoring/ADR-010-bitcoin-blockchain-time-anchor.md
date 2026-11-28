@@ -1,4 +1,5 @@
-# ADR 010: Bitcoin blockchain time anchor
+# Bitcoin blockchain time anchor
+Architectural Decision Record (ADR) 010
 
 ## Description
 
@@ -57,6 +58,3 @@ Anchor every Open Proof Record in the Bitcoin blockchain. The hash of each signe
 
 - [ADR-002](ADR-002-opentimestamps-anchoring.md): OpenTimestamps as the anchoring protocol.
 - [ADR-003](ADR-003-sha256-file-fingerprint.md): SHA-256 file fingerprint.
-- [ADR-006](ADR-006-gami-proof-record-format.md): `timestamps` array allows more than one anchor per GPR.
-- Open decision D-13: choice of the second timestamping system.
-- Risks T-03, T-08, T-10, B-10, B-16 in the [risk register](../../000-product-vision/002-risk-register.md).
