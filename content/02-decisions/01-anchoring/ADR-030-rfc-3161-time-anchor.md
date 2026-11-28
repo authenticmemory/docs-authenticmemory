@@ -3,7 +3,7 @@ Architectural Decision Record (ADR) **030**
 
 ## Description
 
-Use eIDAS-qualified RFC 3161 time-stamps from two unrelated providers as the second, Bitcoin-independent time anchor for Authentic Memory proof records.
+Use an eIDAS-qualified RFC 3161 time-stamp as the second, Bitcoin-independent time anchor for Authentic Memory proof records.
 
 ## Status
 
